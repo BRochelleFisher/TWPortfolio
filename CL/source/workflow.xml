@@ -17,3 +17,14 @@
 
     <pubdate>19 June 2025</pubdate>
   </info>
+	<orderedlist>
+		<title>These are the general overview steps:</title>
+		<listitem><para>Collect samples.</para><para>You will create a CL from your documentation. This project creates a CL for cybersecurity from online, GPL or unlicensed content.</para></listitem>
+		<listitem><parar>Aggregate samples to one text file.</parar></listitem>
+		<listitem><para>Run the Python script on the text file, to get a CSV file of each word and its number of instances used.</para></listitem>
+		<listitem><para>For each word, decide its part of speech, allowed or not allowed, audience, and exmaples.</para><para>To work on the CSV, open it in a spreadsheet application.</para></listitem>
+		<listitem><para>Create grammar and content rules.</para><para>This project will start with ASD-STE 100 rules and then customize them.</para></listitem>
+		<listitem><para>Select an AI tool to test content for CL conformance, or create a Python script to test similar.</para></listitem>
+	</orderedlist>
+ 
+ </article> 

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.2" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Work the Words - First Steps</title>
+
+    <!-- <author>
+      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
+    </author> -->
+
+    <!-- <pubdate>19 June 2025</pubdate> -->
+  </info>
+
+  <section>
+   <para>With three small samples of cybersecurity documentation from different organizations, the python script gave us 4755 unique words.
+   Your sample should be much larger. Our goal is to make a cybersecurity dictionary of about 1000 words. This does not include product names
+   or company-specific words. </para>
+   <para>Scheduling: The average effort is 20 words each hour. We can expect this dictionary to require 238 hours (about 30 working days) to complete.</para>
+   <procedure><title>To work through the words to create your dictionary:</title>
+		<step>Import the dictionary CSV file to a spreadsheet.<para>We will use Google Sheets. You can use Microsoft Excel or 
+		similar.</para><para>Our Python script uses a pipe ( | ) as a delimiter between the word and its frequency of use. When you import 
+		the CSV, set the pipe as the delimiter, to get the word list in column A and the frequency in column B.</para></step>
+		<step>Change row 1 to be these headers: Word, Count, Part of Speech, Definition, Good Example, Bad Example, Allowed?, Audience, Alt1, Alt2</step>
+		<step>If there are rows between the header row and the first word, delete them.</step>
+		<step>The script sorted the list by highest frequency to lowest. Start with the words most used. These will be the easiest.
+			</step>
+		<step>Set the Part of Speech.
+			<itemizedlist>
+				<listitem><para>A typical result for the most used words are the name of your organization or product.
+				Set the part of speech as Name. This lets you filter for these nouns which may change more often 
+				than regular nouns. And, you will have variables for these names, which should be ignored by the checker tool.</para></listitem>
+				<listitem><para>Enter the part of speech for the other most common words. When you get to a word that could be used in 
+				multiple ways, enter TBD and stop.</para></listitem>
+			</itemizedlist>
+		
+	</step>
+		<step>If the word is a name or common word, such as <emphasis>the that this from</emphasis>, you can leave the Definition blank.
+		For all other words:
+		<itemizedlist>
+			<listitem><para>If you do not allow the word, do not enter a definition. Enter an alternative word. If there are multiple
+			alteratives, enter one word in each ALT column. You can add more ALT columns if required. In the Allowed column, enter F
+			(for false).</para></listitem>
+			<listitem><para>If you allow the word, enter a definition. Leave the ALT columns blank.</para></listitem>
+		</itemizedlist>
+		</step>
+		<step>If you can easily copy an exmaple of the word, do it now. If the word is not allowed, paste the example from your sample in Bad Example.
+		In Good Example, enter the rewritten phrase or sentence with the correct allowed alternative.
+		If the word is allowed, paste your sample in Good Example, and leave Bad Example blank. In the Allowed column, enter T (for true).
+		</step>
+		<step>In the Allowed column, enter T (for true) or F (for false).</step>
+		<step>In the Audience column, enter <emphasis>all</emphasis>, or create a list of your audience personas on a separate tab and then create a 
+		data validation for this column, to select the persona from the list.</step>
+   </procedure>
+  </section>
+  <section>
+	<title>Examples</title>
+	
+  </section>
+</article>

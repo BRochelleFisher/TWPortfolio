@@ -21,7 +21,7 @@
   <section>
     <title>What is a Controlled Language?</title>
 
-    <para>A Controlled Language (CL) is a set of rules for grammar, sentence
+    <para>A Controlled Language (CL) is set of rules for grammar, sentence
     length, and vocabulary. The rules define a subset of the natural language
     as allowed. Specifically in technical writing, many CLs limit the verbs
     you can use. This enforces consistency for all your documentation and
@@ -31,16 +31,16 @@
       <title>CL or Taxonomy?</title>
 
       <para>In general terms, a taxonomy is a structured CL, with parents and
-      children. For example, in biology, the same terms are used for the
+      children. For example, in biology the same terms are used for the
       structure: kingdom, phylum, class, order, family, genus, species. In
       Artificial Intelligence (AI), the structure may be AI, Machine Learning,
       Human Crowd-Sourced, Neural Networks, Deep Learning. </para>
 
       <para>In technical writing, the taxonomy is usually for different
       audiences of a product: system administrator, basic end-user, advanced
-      end-user, superuser, and C-level decision maker. There will be a default CL,
+      end-user, superuser, C-level decision maker. There will be a default CL,
       with all the rules that apply to all audiences, and a dictionary for
-      each persona. For example, a taxonomy for a decision maker will be used
+      each personna. For example, a taxonomy for a decision maker will be used
       mainly by Marketing and will allow the word
       <emphasis>leverage</emphasis> with the meaning "to use a foundation
       feature to reach the solution for which the product exists". In the
@@ -49,12 +49,12 @@
       <emphasis>use</emphasis>.</para>
 
       <para>A Taxonomy Manager for a company that creates a shopping app for
-      smartphones will own labeling strategies to create the best
+      SmartPhones will be in charge of labeling strategies, to create the best
       possible results for a search string. A Taxonomy Manager for a cyber
       security company will create a CL for different audiences and acquire a
       tool to enforce it. With this ambiguity, we will make our first rule:
       <emphasis>taxonomy</emphasis> is not allowed in this documentation, and
-      its alternative is <emphasis>CL</emphasis>. We will have multiple dictionaries in our CL.</para>
+      its alternative is <emphasis>CL</emphasis>. </para>
     </section>
 
     <section>
@@ -73,7 +73,7 @@
 
         <listitem>
           <para>If you translate your content, the reduced vocabulary and
-          grammar and the re-use of matching content make translation
+          grammar and the re-use of matching content, makes translation
           significantly cheaper and often of better quality.</para>
         </listitem>
 
@@ -94,7 +94,7 @@
           <para>Use of a CL will cut your content by at least 30% without loss
           of information. Concise documentation makes it easier for users to
           find what is relevant to them at the time, makes it clear to
-          reviewers and stakeholders what is not relevant or incorrect, and
+          reviewers and stake-holders what is not relevant or incorrect, and
           makes the documented steps easier to follow.</para>
         </listitem>
       </itemizedlist>
@@ -106,9 +106,10 @@
 
     <para>This is a personal project of Rochelle Fisher, June 2025. The goal
     is to make a sample of technical writing and a sample of a proprietary CL
-    for cybersecurity.</para>
+    for cyber security.</para>
 
-    <para>If you use part, parts, or all of this project for personal use or an organization (non-profit or for-profit), you must
+    <para>If you use part, parts, or all of this project for personal use, for
+    profit, or for an organization (non-profit or for-profit), you must
     include a reference to this project or its documentation. </para>
 
     <para><emphasis role="bold">Reference Example:</emphasis></para>

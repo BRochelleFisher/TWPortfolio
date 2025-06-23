@@ -32,12 +32,12 @@
 		<step>If there are rows between the header row and the first word, delete them.</step>
 		<step>The script sorted the list by highest frequency to lowest. Start with the words most used. These will be the easiest.
 			</step>
-		<step>Set the Part of Speech.
+		<step>Set the Part of Speech (PoS).
 			<itemizedlist>
 				<listitem><para>A typical result for the most used words are the name of your organization or product.
-				Set the part of speech as Name. This lets you filter for these nouns which may change more often 
+				Set the PoS as Name. This lets you filter for these nouns which may change more often 
 				than regular nouns. And, you will have variables for these names, which should be ignored by the checker tool.</para></listitem>
-				<listitem><para>Enter the part of speech for the other most common words. When you get to a word that could be used in 
+				<listitem><para>Enter the PoS for the other most common words. When you get to a word that could be used in 
 				multiple ways, enter TBD and stop.</para></listitem>
 			</itemizedlist>
 		
@@ -62,6 +62,27 @@
   </section>
   <section>
 	<title>Examples of the First Words</title>
-	
+	  <itemizedlist><listitem>
+	<para>In our example, one of the product or company names is the word with the highest frequency. We set its PoS as <emphasis>name</name> and set it to be <b>Allowed</>. We set the audience to <emphasis>all</all>.
+	We do not set a value for the other columns yet.
+	</para><listitem>
+		<listitem><para>
+			In the next top 20 words, we have many that are clearly to be allowed: <emphasis>this that will with from your</emphasis>. These are pronouns, prepositions, and modular verbs. In this case, it does not give a lot of information 
+			to define the PoS. Is <emphasis>that</emphasis> a pronoun, adverb, conjunction, or determiner? In a technical writing dictionary for native speakers, it does not matter. We set up a rule that we do not use minimalist rules. 
+			If <emphasis>that</emphasis> helps make a sentence easier to understand, we use it. You can set a definition forf <emphasis>will</emphasis>, to make it clear that the use of will as a part of a future-tense verbal phrase is allowed, 
+			but it is not allowed as a verb to mean "to desire" or as a noun to mean "legal declaration of disposal of property after death".
+</para><listitem>
+		<listitem><para>Next we have words that are industry standard for software technical writing: <emphasis>
+			introduction
+user
+data
+attributes
+attribute
+example
+organisation</emphasis>. At some point, we may require a specific deinition for some of these words. For now, we set the PoS, set to Allowed, and set audience to all.</para>
+			<note>Note that <emphasis>attribute</emphasis> and <emphasis>attributes</emphasis> are two items. We restrict the values of the Word and ALT columns to one word or phrase to prepare for a checker tool that might be simple Python script.
+			If you know that you will use an AI-driven tool, such as writer.com or jasper.ai, change the dictionary to work with the aquired tool.
+			</note>
+
   </section>
 </article>

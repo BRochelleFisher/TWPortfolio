@@ -83,6 +83,19 @@ organisation</emphasis>. At some point, we may require a specific deinition for 
 			<note>Note that <emphasis>attribute</emphasis> and <emphasis>attributes</emphasis> are two items. We restrict the values of the Word and ALT columns to one word or phrase to prepare for a checker tool that might be simple Python script.
 			If you know that you will use an AI-driven tool, such as writer.com or jasper.ai, change the dictionary to work with the aquired tool.
 			</note>
+			<para>See <emphasis>organisation</emphasis>. We know we need this word, but this spelling is British. We know our rules will tell us to use American spelling. In this case, we will make a decision for our dictionary without
+			analysis, or to put it more accurately, despite analysis. The spelling of <emphasis>organisation</emphasis> is the most commonly used form, but we will not use it. We will use the American spelling.
+				<procedure>
+					<step><para>Sort the complete range of dictionary alphabetically, by <b>Word</b>.</para></step>
+					<step><para>Set <emphasis>organization</emphasis> and <emphasis>organizations</emphasis> as allowed (T in <b>Allowed</b>).</para></step>
+					<step><para>Set the British <emphasis>organisation</emphasis> and <emphasis>organisations</emphasis> as not allowed (F in <b>Allowed</b>).</para></step>
+					<step><para>In the allowed words, set the definition: <literal>nonspecific body of people with a purpose</literal></para></step>
+					<step><para>In ALT1 for <emphasis>organisation</emphasis> and <emphasis>organisations</emphasis>, enter <emphasis>organization</emphasis> and <emphasis>organizations</emphasis>.</para></step>
+				</procedure>	
+				<note>Why not add <emphasis>organizational</emphasis> on the fly? Answer: It is used only one time. We will analyze the text and hope to find a more common rewrite in that one sentence.</note>
+		
+			</para><listitem></itemizedlist>
+	  <para>Sort the range by Count. We are done with the easiest words. Next: analyze words in their syntax and by content to make decisions for the dictionary.
 
   </section>
 </article>

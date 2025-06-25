@@ -9,13 +9,13 @@
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns:db="http://docbook.org/ns/docbook">
   <info>
-    <title>Creating a Proprietary Controlled Language</title>
+    <title>Introduction to Controlled Languages</title>
 
-    <author>
+   <!--  <author>
       <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
     </author>
 
-    <pubdate>19 June 2025</pubdate>
+    <pubdate>19 June 2025</pubdate> -->
   </info>
 
   <section>
@@ -31,9 +31,8 @@
       <title>CL or Taxonomy?</title>
 
       <para>In general terms, a taxonomy is a structured CL, with parents and
-      children. For example, in biology the same terms are used for the
-      structure: kingdom, phylum, class, order, family, genus, species. In
-      Artificial Intelligence (AI), the structure may be AI, Machine Learning,
+      children. For example, in biology the taxonomy is: kingdom, phylum, class, order, family, genus, species. In
+      Artificial Intelligence (AI), the taxonomy may be: AI, Machine Learning,
       Human Crowd-Sourced, Neural Networks, Deep Learning. </para>
 
       <para>In technical writing, the taxonomy is usually for different
@@ -42,19 +41,17 @@
       with all the rules that apply to all audiences, and a dictionary for
       each personna. For example, a taxonomy for a decision maker will be used
       mainly by Marketing and will allow the word
-      <emphasis>leverage</emphasis> with the meaning "to use a foundation
-      feature to reach the solution for which the product exists". In the
-      taxonomy for all other audiences, the word <emphasis>leverage
-      </emphasis>is not allowed, and its alternative is
-      <emphasis>use</emphasis>.</para>
+      <wordasword>leverage</wordasword> with the meaning "to use a foundation
+      feature to reach the solution for which the product exists". For all other audiences, the word <wordasword>leverage
+      </wordasword>is not allowed, and its alternative is
+      <wordasword>use</wordasword>.</para>
 
       <para>A Taxonomy Manager for a company that creates a shopping app for
-      SmartPhones will be in charge of labeling strategies, to create the best
-      possible results for a search string. A Taxonomy Manager for a cyber
+      SmartPhones will be in charge of labeling strategies for search results. A Taxonomy Manager for a cyber
       security company will create a CL for different audiences and acquire a
       tool to enforce it. With this ambiguity, we will make our first rule:
-      <emphasis>taxonomy</emphasis> is not allowed in this documentation, and
-      its alternative is <emphasis>CL</emphasis>. </para>
+      <wordasword>taxonomy</wordasword> is not allowed in this documentation, and
+      its alternative is <wordasword>CL</wordasword>(the full vocabulary and rules) or <wordasword>dictionary</wordasword> (a subset of the CL for a specific audience). </para>
     </section>
 
     <section>
@@ -91,9 +88,9 @@
         </listitem>
 
         <listitem>
-          <para>Use of a CL will cut your content by at least 30% without loss
+          <para>Reduce your content by at least 30% without loss
           of information. Concise documentation makes it easier for users to
-          find what is relevant to them at the time, makes it clear to
+          find what is relevant to them at the time, makes clear to
           reviewers and stake-holders what is not relevant or incorrect, and
           makes the documented steps easier to follow.</para>
         </listitem>
@@ -106,7 +103,7 @@
 
     <para>This is a personal project of Rochelle Fisher, June 2025. The goal
     is to make a sample of technical writing and a sample of a proprietary CL
-    for cyber security.</para>
+    for cybersecurity.</para>
 
     <para>If you use part, parts, or all of this project for personal use, for
     profit, or for an organization (non-profit or for-profit), you must

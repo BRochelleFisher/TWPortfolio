@@ -1,0 +1,108 @@
+<!DOCTYPE HTML><html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Creating Controlled Language for Cybersecurity</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book"><div class="titlepage"><div><div><h1 class="title"><a name="d55e1"></a>Creating Controlled Language for Cybersecurity</h1></div><div><div class="author"><h3 class="author">Rochelle Fisher</h3></div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="article"><a href="#d55e8">Introduction to Controlled Languages</a></span></dt><dd><dl><dt><span class="section"><a href="#d55e12">What is a Controlled Language?</a></span></dt><dd><dl><dt><span class="section"><a href="#d55e15">CL or Taxonomy?</a></span></dt><dt><span class="section"><a href="#d55e34">Benefits of a CL</a></span></dt></dl></dd><dt><span class="section"><a href="#d55e48">Scope of Project</a></span></dt><dt><span class="section"><a href="#d55e58"></a></span></dt></dl></dd><dt><span class="article"><a href="#d55e61">Workflow</a></span></dt><dt><span class="article"><a href="#d55e83">Collect Samples</a></span></dt><dt><span class="article"><a href="#d55e93">Run the Python Script</a></span></dt><dd><dl><dt><span class="section"><a href="#d55e98">Creating the Word Counter</a></span></dt><dt><span class="section"><a href="#d55e127">Create the Dictionary File</a></span></dt></dl></dd><dt><span class="article"><a href="#d55e157">Work the Words</a></span></dt><dd><dl><dt><span class="section"><a href="#d55e162">Work the First Words</a></span></dt><dt><span class="section"><a href="#d55e200">Examples of the First Words</a></span></dt></dl></dd></dl></div><div class="article"><div class="titlepage"><div><div><h1 class="title"><a name="d55e8"></a>Introduction to Controlled Languages</h1></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="section"><a href="#d55e12">What is a Controlled Language?</a></span></dt><dd><dl><dt><span class="section"><a href="#d55e15">CL or Taxonomy?</a></span></dt><dt><span class="section"><a href="#d55e34">Benefits of a CL</a></span></dt></dl></dd><dt><span class="section"><a href="#d55e48">Scope of Project</a></span></dt><dt><span class="section"><a href="#d55e58"></a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d55e12"></a>What is a Controlled Language?</h2></div></div></div><p>A Controlled Language (CL) is set of rules for grammar, sentence
+    length, and vocabulary. The rules define a subset of the natural language
+    as allowed. Specifically in technical writing, many CLs limit the verbs
+    you can use. This enforces consistency for all your documentation and
+    conforms to or builds an industry standard for your products.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d55e15"></a>CL or Taxonomy?</h3></div></div></div><p>In general terms, a taxonomy is a structured CL, with parents and
+      children. For example, in biology the taxonomy is: kingdom, phylum, class, order, family, genus, species. In
+      Artificial Intelligence (AI), the taxonomy may be: AI, Machine Learning,
+      Human Crowd-Sourced, Neural Networks, Deep Learning. </p><p>In technical writing, the taxonomy is usually for different
+      audiences of a product: system administrator, basic end-user, advanced
+      end-user, superuser, C-level decision maker. There will be a default CL,
+      with all the rules that apply to all audiences, and a dictionary for
+      each personna. For example, a taxonomy for a decision maker will be used
+      mainly by Marketing and will allow the word
+      <em class="wordasword">leverage</em> with the meaning "to use a foundation
+      feature to reach the solution for which the product exists". For all other audiences, the word <em class="wordasword">leverage
+      </em>is not allowed, and its alternative is
+      <em class="wordasword">use</em>.</p><p>A Taxonomy Manager for a company that creates a shopping app for
+      SmartPhones will be in charge of labeling strategies for search results. A Taxonomy Manager for a cyber
+      security company will create a CL for different audiences and acquire a
+      tool to enforce it. With this ambiguity, we will make our first rule:
+      <em class="wordasword">taxonomy</em> is not allowed in this documentation, and
+      its alternative is <em class="wordasword">CL</em>(the full vocabulary and rules) or <em class="wordasword">dictionary</em> (a subset of the CL for a specific audience). </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d55e34"></a>Benefits of a CL</h3></div></div></div><p>Adopting and enforcing a CL is the solution to many technical
+      writing issues.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>If your organization has a team of writers, the CL enforces
+          consistency of the content among the writers. If you have one
+          writer, the CL enforces consistency over time among the
+          documents.</p></li><li class="listitem"><p>If you translate your content, the reduced vocabulary and
+          grammar and the re-use of matching content, makes translation
+          significantly cheaper and often of better quality.</p></li><li class="listitem"><p>If you have a global market but do not have the budget for
+          localization, the CL makes it easier for non-native speakers to read
+          and use your documentation correctly. If your documentation is
+          online, built-in machine translation (such as Google Translate) will
+          give better results.</p></li><li class="listitem"><p>If the technical writers in your organization internalize your
+          CL and re-use strategy, their productivity will increase.</p></li><li class="listitem"><p>Reduce your content by at least 30% without loss
+          of information. Concise documentation makes it easier for users to
+          find what is relevant to them at the time, makes clear to
+          reviewers and stake-holders what is not relevant or incorrect, and
+          makes the documented steps easier to follow.</p></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d55e48"></a>Scope of Project</h2></div></div></div><p>This is a personal project of Rochelle Fisher, June 2025. The goal
+    is to make a sample of technical writing and a sample of a proprietary CL
+    for cybersecurity.</p><p>If you use part, parts, or all of this project for personal use, for
+    profit, or for an organization (non-profit or for-profit), you must
+    include a reference to this project or its documentation. </p><p><span class="bold"><strong>Reference Example:</strong></span></p><p><code class="literal">Rochelle Fisher, Sample Cyber Security CL, version 1.0, date 19 June 2025,
+    PID #RF_SecCL</code>.</p></div><div class="section"><div class="titlepage"></div><p>----</p><p>Copyright© 2025 Rochelle Fisher. All Rights Resrved. Original work for private use.</p></div></div><div class="article"><div class="titlepage"><div><div><h1 class="title"><a name="d55e61"></a>Workflow</h1></div></div><hr></div><div class="orderedlist"><p class="title"><b>These are the general overview steps:</b></p><ol class="orderedlist" type="1"><li class="listitem"><p>Collect samples.</p><p>You will create a CL from your documentation. This project creates a CL for cybersecurity from online, GPL or unlicensed content.</p></li><li class="listitem"><p>Aggregate samples to one text file.</p></li><li class="listitem"><p>Run the Python script on the text file, to get a CSV file of each word and its number of instances used.</p></li><li class="listitem"><p>From the Python output, create the dictionary file.</p></li><li class="listitem"><p>For each word, starting with the least used, decide its part of speech, allowed or not allowed, audience, and examples.</p></li><li class="listitem"><p>Create grammar and content rules.</p><p>This project will start with ASD-STE 100 rules and then customize them.</p></li><li class="listitem"><p>Select an AI tool to test content for CL conformance, or create a Python script to test similar.</p></li></ol></div></div><div class="article"><div class="titlepage"><div><div><h1 class="title"><a name="d55e83"></a>Collect Samples</h1></div></div><hr></div><p>This is the cloudiest part for a sample project because we do not want to infringe on copyright laws. We will not use the content as-is, available for consumer use. We will use it only to get the vocabulary for our CL.
+	When you create your CL, use your organization's documentation.</p><div class="itemizedlist"><p class="title"><b>Sources:</b></p><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">Rubicon Communications LLC. (Apr 25, 2025) netgate© Security Gateway Manual: Amazon AWS. © Copyright 2025 Rubicon Communications LLC. https://docs.netgate.com/manuals/pfsense/en/latest/aws-vpn-appliance-security-gateway-manual.pdf</li><li class="listitem">OpenCTI. (2025) OpenCTI User Guide: Manual Creations. © 2025 Filigran. All rights reserved. https://docs.opencti.io/latest/usage/manual-creation/</li><li class="listitem">MISP. (2024) MISP User Guide: A Threat Sharing Platform. GPL and CC-BY-SA 4.0 international.</li></ul></div></div><div class="article"><div class="titlepage"><div><div><h1 class="title"><a name="d55e93"></a>Run the Python Script</h1></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="section"><a href="#d55e98">Creating the Word Counter</a></span></dt><dt><span class="section"><a href="#d55e127">Create the Dictionary File</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d55e98"></a>Creating the Word Counter</h2></div></div></div><p>To create the dictionary, we start with the unique words used and how many times each word is used in our sample. </p><div class="procedure"><a name="d55e101"></a><p class="title"><b>Procedure&nbsp;1.&nbsp;To create and run the python script word_counter.py:</b></p><ol class="procedure" type="1"><li class="step">Save your aggregated sample as <code class="literal">sampleAgg.txt</code>.</li><li class="step">Copy this script in a text editor.</li><li class="step">In the same folder as <code class="literal">sampleAgg.txt</code>, save the file as <code class="literal">word_counter.py</code>.</li><li class="step">Run the python script: 
+		<span class="command"><strong>python word_counter.py &gt; dictionary.csv</strong></span></li></ol></div><pre class="programlisting">
+import re
+import string
+import sys
+from collections import Counter
+
+def analyze_document_frequency(filepath="sampleAgg.txt"):
+    
+    try:
+        with open(filepath, 'r', encoding='utf-8') as document_file:
+            text_string = document_file.read().lower()
+    except FileNotFoundError:
+        print(f"Error: The file '{filepath}' was not found.", file=sys.stderr)
+        return
+    except Exception as e:
+        print(f"An error occurred while reading the file: {e}", file=sys.stderr)
+        return
+
+    match_pattern = re.findall(r'\b[a-z]{4,15}\b', text_string)
+
+    word_counts = Counter(match_pattern)
+
+    sorted_words = sorted(word_counts.items(), key=lambda item: (-item[1], item[0]))
+
+    print("Word Frequencies:")
+    print("-----------------")
+    for word, count in sorted_words:
+        print(f"{word} | {count}")
+
+if __name__ == "__main__":
+    analyze_document_frequency()
+		</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note on Code Source</h3><p>This code started with the python script in <span class="emphasis"><em>Alchemy of Tomes</em></span> [<span class="citation">Fisher (2020)</span>], which
+		does not work in the latest Python versions. We used Gemini (Google AI) to update this script.</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d55e127"></a>Create the Dictionary File</h2></div></div></div><p>With three small samples of cybersecurity documentation from different organizations, the Python script gave us 4755 unique words.
+   Your sample will be much larger. Your goal is to create a cybersecurity dictionary of approximately 1,000 words. This does not include product names
+   or company-specific words. </p><p>Prerequisites: Run the Python script.</p><p>Effort: Use the output file from the Python script to create the dictionary file. This will require approximately ten minutes.</p><div class="procedure"><a name="d55e132"></a><p class="title"><b>Procedure&nbsp;2.&nbsp;To create the dictionary file:</b></p><ol class="procedure" type="1"><li class="step">Import the output file to a spreadsheet.
+			<p>We will use Google Sheets. You can use Microsoft Excel or 
+		similar.
+			</p><p>Our Python script uses a pipe ( | ) as a delimiter between the word and its frequency of use. When you import the file, set the pipe as the delimiter.
+			</p></li><li class="step">Set the column headers.
+		<p><a name="specifictool"></a>If you know that you will use a specific AI-driven tool, such as writer.com or jasper.ai, change the dictionary headers and values to work with the aquired tool.</p><p>If you do not have a checker tool yet, change row 1 to be these headers: <code class="literal">Word, Count, Part of Speech, Definition, Good Example, Bad Example, Allowed?, Audience, Alt1, Alt2</code>.</p></li><li class="step">If there are rows between the header row and the first word, delete them.</li><li class="step">In a separate tab, enter your audience personas in one column. Make sure <code class="literal">all</code> is in this list.</li><li class="step">In the main tab, <span class="guilabel"><strong>Audience</strong></span> column, set data validation to select the persona from the list.</li></ol></div><p>The script sorted the output by highest frequency to lowest. Start with the words most used. These will be the easiest.</p></div></div><div class="article"><div class="titlepage"><div><div><h1 class="title"><a name="d55e157"></a>Work the Words</h1></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="section"><a href="#d55e162">Work the First Words</a></span></dt><dt><span class="section"><a href="#d55e200">Examples of the First Words</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d55e162"></a>Work the First Words</h2></div></div></div><p>The first words that you set up in your dictionary will be the easiest and will have the most impact. </p><p>Prerequisites: Have the dictionary file in a spreadsheet.</p><p>Effort: This will require less than an hour.</p><div class="procedure"><a name="d55e167"></a><p class="title"><b>Procedure&nbsp;3.&nbsp;To work through the most used words in your dictionary:</b></p><ol class="procedure" type="1"><li class="step">In the word with the highest count, set the Part of Speech (PoS).
+			<p>A typical result for the most used words are the names of your organization or product.
+				ASD-STE calls these <span class="emphasis"><em>technical names</em></span>. Set the <span class="guilabel"><strong>PoS</strong></span> of the technial names in the top results as <code class="literal">Name</code>.</p><p>
+				This lets you filter for proper nouns which change more often than regular nouns. For example, the company name will change if your organization delivers a white label product.</p></li><li class="step"><p>Enter the PoS for the other most common words, such as <em class="wordasword">the that this from</em>. When you get to a word that is may be used in multiple parts of speech and 
+			is not a common word for all English content, skip it.</p></li><li class="step">In the <span class="guilabel"><strong>Allowed</strong></span> column, enter <code class="literal">T</code> (for true) or <code class="literal">F</code> (for false).<p>Most of these first words will be allowed.</p></li><li class="step">In the <span class="guilabel"><strong>Audience</strong></span> column, enter <code class="literal">all</code> or select a persona from the list, if you are sure this word will be allowed only for this persona.</li></ol></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d55e200"></a>Examples of the First Words</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>In our example, one of the product or company names is the word with the highest frequency. We set its PoS as <code class="literal">Name</code> and set <span class="guilabel"><strong>Allowed</strong></span> to <code class="literal">T</code>.
+		We set <span class="guilabel"><strong>Audience</strong></span> to <code class="literal">all</code>. We do not set a value for the other columns yet.</p><img src="images/words01.png"></li><li class="listitem"><p>
+			In the top words, we have many that are clearly to be allowed: <em class="wordasword">this that will with from your</em>. These are pronouns, prepositions, and modular verbs. 
+			In a technical writing dictionary for native speakers, it does not give a lot of information to define the PoS. Is <em class="wordasword">that</em> a pronoun, adverb, conjunction, or determiner? 
+			We set a rule that we do not use minimalist rules. 
+			If <em class="wordasword">that</em> helps make a sentence easier to understand, we use it. 
+			</p><img src="images/words02.png"></li><li class="listitem"><p>We have words that are industry standard for software technical writing: <em class="wordasword">
+			introduction
+user
+data
+attributes
+attribute
+example
+organisation</em>. Later, we will enter a specific deinition for these words. For now, we set the <span class="guilabel"><strong>PoS</strong></span>, set <span class="guilabel"><strong>Allowed</strong></span> to <code class="literal">T</code>, and set <span class="guilabel"><strong>Audience</strong></span> to <code class="literal">all</code>.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><em class="wordasword">attribute</em> and <em class="wordasword">attributes</em> are two items. 
+			We restrict the values of the <span class="guilabel"><strong>Word</strong></span> and <span class="guilabel"><strong>ALT</strong></span> columns to one word or phrase, to prepare for a checker tool that might be a simple Python script.
+			<p><a name="specifictool"></a>If you know that you will use a specific AI-driven tool, such as writer.com or jasper.ai, change the dictionary headers and values to work with the aquired tool.</p></div></li><li class="listitem"><p>See <em class="wordasword">organisation</em>. We know we need this word, but this spelling is British. We know our rules will tell us to use American spelling. In this case, we will make a decision for our dictionary without
+			analysis, or to put it more accurately, despite analysis. The spelling of <em class="wordasword">organisation</em> is the most commonly used form, but we will not use it. We will use the American spelling.
+				<div class="procedure"><ol class="procedure" type="1"><li class="step"><p>Sort the complete range of dictionary alphabetically, by <em class="wordasword">Word</em>.</p></li><li class="step"><p>Set <em class="wordasword">organization</em> and <em class="wordasword">organizations</em> as allowed (<code class="literal">T</code> in <span class="guilabel"><strong>Allowed</strong></span>).</p></li><li class="step"><p>Set the British <em class="wordasword">organisation</em> and <em class="wordasword">organisations</em> as not allowed (<code class="literal">F</code> in <span class="guilabel"><strong>Allowed</strong></span>).</p></li><li class="step"><p>In the allowed words, set the definition: <code class="literal">nonspecific body of people with a purpose</code>.</p><p>We will use <em class="wordasword">organisation</em> for a 
+					company, nonprofit org, military base, and all similar bodies.</p></li><li class="step"><p>In ALT1 for <em class="wordasword">organisation</em> and <em class="wordasword">organisations</em>, enter <em class="wordasword">organization</em> and <em class="wordasword">organizations</em>.</p></li></ol></div>	
+			<img src="images/words03.png">	
+			</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3>Why not add <em class="wordasword">organizational</em> on the fly? Answer: It is used only one time. We will analyze the text and find a more common rewrite in that one sentence. Or maybe that one 
+			instance is for <em class="wordasword">Organizational Unit (OU)</em> in Active Directory. If so, we will make that phrase a "word".</div></li></ul></div><p>Sort the range by Count. We are done with the easiest words. Next: analyze words in their syntax and by content to make decisions for the dictionary.</p></div></div></div></body></html>

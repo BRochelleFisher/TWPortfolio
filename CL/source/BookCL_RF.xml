@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      version="5.0">
+    <info>
+        <title>Creating Controlled Language for Cybersecurity</title>
+        <author>
+            <personname>Rochelle Fisher</personname>
+        </author>
+		<date>June 2025</date>
+    </info>
+
+    <!-- <xi:include href="copyright.xml"/> -->
+	<xi:include href="CreatingCL01.xml"/>
+    <xi:include href="workflow.xml"/>
+    <xi:include href="collectSamples.xml"/>
+	<xi:include href="RunPython.xml"/>
+    <!-- <xi:include href="CreateDictionaryFile.xml"/> -->
+    <xi:include href="workWords.xml"/>
+
+</book>

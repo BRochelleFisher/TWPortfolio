@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.2" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Analyze Words</title>
+
+    <!-- <author>
+      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
+    </author> -->
+
+    <!-- <pubdate>19 June 2025</pubdate> -->
+  </info>
+
+ <section><title>Work the Next Words</title>
+ 
+ 
+ </section>
+ <section>
+	<title>Examples of Word Analysis</title>
+	<para>Let's start with <wordasword>organizational</wordasword>.</para>
+	<procedure>
+		<title>To set <wordasword>organizational</wordasword> as a word in our CL:</title>
+		<step>Open the file with all your textual content. We named this file <filename>sampleAgg.txt</filename>.</step>
+		<step>Search for <wordasword>organizational</wordasword>.
+			<para>We found this:*</para>
+			<blockquote>Produce intelligence that will be embedded into organizational workflows and would serve decision-makers.</blockquote>
+			<para>* This sentence belongs to one of the organizations from whom we used samples. We take no credit or blame for content from our samples. </para>
+		</step>
+		<step>Analyzing the use of <wordasword>organizational</wordasword>, we see ambiguity. Does the author mean that the workflows are organized? That they are for the organization? That there are
+		different workflows for different groups in the hierarchy?<para>If we remove the word, it does not change the meaning, as far as we can see. We decide that this word is not allowed. If we 
+		had access to the SME, we would discuss their meaning and find alternatives. 
+		</para>
+		
+		<para>Suggestion: You have access to your SMEs. Set your CL words as best as you can. Then, discuss multiple words with similar issues. Edit your CL for alternative words and other decisions.</para>
+		</step>
+	</procedure>
+ </section>

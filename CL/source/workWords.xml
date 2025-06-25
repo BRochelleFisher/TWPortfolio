@@ -23,7 +23,7 @@
    <para>With three small samples of cybersecurity documentation from different organizations, the Python script gave us 4755 unique words.
    Your sample should be much larger. Our goal is to create a cybersecurity dictionary of approximately 1,000 words. This does not include product names
    or company-specific words. </para>
-   <para>Scheduling: The average effort is 20 words each hour. We can expect this dictionary to require 238 hours (about 30 working days) to complete.</para>
+   <para>Effort: The average effort is 20 words each hour. We can expect this dictionary to require 238 hours (about 30 working days) to complete.</para>
    <procedure><title>To work through the words to create your dictionary:</title>
 		<step>Import the dictionary CSV file to a spreadsheet.<para>We will use Google Sheets. You can use Microsoft Excel or 
 		similar.</para><para>Our Python script uses a pipe ( | ) as a delimiter between the word and its frequency of use. When you import the CSV, set the pipe as the delimiter, to get the word list in column A and the frequency in column B.
@@ -62,16 +62,18 @@
   </section>
   <section>
 	<title>Examples of the First Words</title>
-	  <itemizedlist><listitem>
-	<para>In our example, one of the product or company names is the word with the highest frequency. We set its PoS as <emphasis>name</name> and set it to be <b>Allowed</>. We set the audience to <emphasis>all</all>.
-	We do not set a value for the other columns yet.
-	</para><listitem>
+	  <itemizedlist>
+	  <listitem>
+		<para>In our example, one of the product or company names is the word with the highest frequency. We set its PoS as <emphasis>name</emphasis> and set it to be <wordasword>Allowed</wordasword>.
+		We set the audience to <emphasis>all</emphasis>. We do not set a value for the other columns yet.</para>
+	<imagedata fileref="images/words01/png" />
+	</listitem>
 		<listitem><para>
 			In the next top 20 words, we have many that are clearly to be allowed: <emphasis>this that will with from your</emphasis>. These are pronouns, prepositions, and modular verbs. In this case, it does not give a lot of information 
 			to define the PoS. Is <emphasis>that</emphasis> a pronoun, adverb, conjunction, or determiner? In a technical writing dictionary for native speakers, it does not matter. We set up a rule that we do not use minimalist rules. 
 			If <emphasis>that</emphasis> helps make a sentence easier to understand, we use it. You can set a definition forf <emphasis>will</emphasis>, to make it clear that the use of will as a part of a future-tense verbal phrase is allowed, 
 			but it is not allowed as a verb to mean "to desire" or as a noun to mean "legal declaration of disposal of property after death".
-</para><listitem>
+		</para></listitem>
 		<listitem><para>Next we have words that are industry standard for software technical writing: <emphasis>
 			introduction
 user
@@ -86,16 +88,18 @@ organisation</emphasis>. At some point, we may require a specific deinition for 
 			<para>See <emphasis>organisation</emphasis>. We know we need this word, but this spelling is British. We know our rules will tell us to use American spelling. In this case, we will make a decision for our dictionary without
 			analysis, or to put it more accurately, despite analysis. The spelling of <emphasis>organisation</emphasis> is the most commonly used form, but we will not use it. We will use the American spelling.
 				<procedure>
-					<step><para>Sort the complete range of dictionary alphabetically, by <b>Word</b>.</para></step>
-					<step><para>Set <emphasis>organization</emphasis> and <emphasis>organizations</emphasis> as allowed (T in <b>Allowed</b>).</para></step>
-					<step><para>Set the British <emphasis>organisation</emphasis> and <emphasis>organisations</emphasis> as not allowed (F in <b>Allowed</b>).</para></step>
+					<step><para>Sort the complete range of dictionary alphabetically, by <wordasword>Word</wordasword>.</para></step>
+					<step><para>Set <emphasis>organization</emphasis> and <emphasis>organizations</emphasis> as allowed (T in <wordasword>Allowed</wordasword>).</para></step>
+					<step><para>Set the British <emphasis>organisation</emphasis> and <emphasis>organisations</emphasis> as not allowed (F in <wordasword>Allowed</wordasword>).</para></step>
 					<step><para>In the allowed words, set the definition: <literal>nonspecific body of people with a purpose</literal></para></step>
 					<step><para>In ALT1 for <emphasis>organisation</emphasis> and <emphasis>organisations</emphasis>, enter <emphasis>organization</emphasis> and <emphasis>organizations</emphasis>.</para></step>
 				</procedure>	
-				<note>Why not add <emphasis>organizational</emphasis> on the fly? Answer: It is used only one time. We will analyze the text and hope to find a more common rewrite in that one sentence.</note>
-		
-			</para><listitem></itemizedlist>
-	  <para>Sort the range by Count. We are done with the easiest words. Next: analyze words in their syntax and by content to make decisions for the dictionary.
+				
+			</para>
+			<note>Why not add <emphasis>organizational</emphasis> on the fly? Answer: It is used only one time. We will analyze the text and hope to find a more common rewrite in that one sentence.</note>
+			</listitem>
+		</itemizedlist>
+	  <para>Sort the range by Count. We are done with the easiest words. Next: analyze words in their syntax and by content to make decisions for the dictionary.</para>
 
   </section>
 </article>

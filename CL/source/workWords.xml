@@ -66,7 +66,7 @@
 	  <listitem>
 		<para>In our example, one of the product or company names is the word with the highest frequency. We set its PoS as <emphasis>name</emphasis> and set it to be <wordasword>Allowed</wordasword>.
 		We set the audience to <emphasis>all</emphasis>. We do not set a value for the other columns yet.</para>
-	<imagedata fileref="images/words01/png" />
+	<imagedata fileref="images/words01.png" />
 	</listitem>
 		<listitem><para>
 			In the next top 20 words, we have many that are clearly to be allowed: <emphasis>this that will with from your</emphasis>. These are pronouns, prepositions, and modular verbs. In this case, it does not give a lot of information 

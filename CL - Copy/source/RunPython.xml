@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.2" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Creating Word List</title>
+
+    <!-- <author>
+      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
+    </author> -->
+
+    <!-- <pubdate>19 June 2025</pubdate> -->
+  </info>
+
+  <section>
+    <title>Create and Run the Word Counter Python Script</title>
+
+    <para>To create the dictionary, we start with the unique words used and how many times each word is used in our sample. This Python script will give us an aggregated file, formatted for easy import to a spreadsheet.</para>
+	<procedure>
+		<title>To create and run the python script word_counter.py:</title>
+		<step>Save your aggregated sample as <literal>sampleAgg.txt</literal>.</step>
+		<step>Copy this script in a text editor.</step>
+		<step>In the same folder as <literal>sampleAgg.txt</literal>, save the file as <literal>word_counter.py</literal>.</step>
+		<step>Run the python script: 
+		<command>python word_counter.py > dictionary.csv</command>
+		</step>
+		</procedure>
+		<programlisting linenumbering="numbered" language="python">
+import re
+import string
+import sys
+from collections import Counter
+
+def analyze_document_frequency(filepath="sampleAgg.txt"):
+    
+    try:
+        with open(filepath, 'r', encoding='utf-8') as document_file:
+            text_string = document_file.read().lower()
+    except FileNotFoundError:
+        print(f"Error: The file '{filepath}' was not found.", file=sys.stderr)
+        return
+    except Exception as e:
+        print(f"An error occurred while reading the file: {e}", file=sys.stderr)
+        return
+
+    match_pattern = re.findall(r'\b[a-z]{4,15}\b', text_string)
+
+    word_counts = Counter(match_pattern)
+
+    sorted_words = sorted(word_counts.items(), key=lambda item: (-item[1], item[0]))
+
+    print("Word Frequencies:")
+    print("-----------------")
+    for word, count in sorted_words:
+        print(f"{word} | {count}")
+
+if __name__ == "__main__":
+    analyze_document_frequency()
+		</programlisting>
+		<note><title>Note on Code Source</title>
+		<para>This code started with the python script in <emphasis>Alchemy of Tomes</emphasis> <citation>Fisher (2020)</citation>, which
+		does not work in the latest Python versions. We used Gemini (Google AI) to update this script.</para>
+		</note>
+	</section>
+	<section>
+	 <title>Create the Dictionary File</title>
+
+
+
+  
+   <para>With three small samples of cybersecurity documentation from different organizations, the Python script gave us 4755 unique words.
+   Your sample will be much larger. Your goal is to create a cybersecurity dictionary of approximately 1,000 words. This does not include product names
+   or company-specific words. </para>
+   <para>Prerequisites: Run the Python script.</para>
+   <para>Effort: Use the output file from the Python script to create the dictionary file. This will require approximately ten minutes.</para>
+   <procedure><title>To create the dictionary file:</title>
+		<step>Import the output file to a spreadsheet.
+			<para>We will use Google Sheets. You can use Microsoft Excel or 
+		similar.
+			</para>
+			<para>Our Python script uses a pipe ( | ) as a delimiter between the word and its frequency of use. When you import the file, set the pipe as the delimiter.
+			</para>
+		</step>
+		<step>Set the column headers.
+		<para id="specifictool">If you know that you will use a specific AI-driven tool, such as writer.com or jasper.ai, change the dictionary headers and values to work with the aquired tool.</para>
+			
+		<para>If you do not have a checker tool yet, change row 1 to be these headers: <literal>Word, Count, Part of Speech, Definition, Good Example, Bad Example, Allowed?, Audience, Alt1, Alt2</literal>.</para>
+		</step>
+		<step>If there are rows between the header row and the first word, delete them.</step>
+		<step>In a separate tab, enter your audience personas in one column. Make sure <literal>all</literal> is in this list.</step>
+		<step>In the main tab, <guilabel>Audience</guilabel> column, set data validation to select the persona from the list.</step>
+	</procedure>
+	<para>The script sorted the output by highest frequency to lowest. Start with the words most used. These will be the easiest.</para></section>
+</article>
+		
+	

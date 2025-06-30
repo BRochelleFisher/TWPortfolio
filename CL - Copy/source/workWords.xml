@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.2" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Getting Started with the Dictionary</title>
+
+    <!-- <author>
+      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
+    </author> -->
+
+    <!-- <pubdate>19 June 2025</pubdate> -->
+  </info>
+
+ <section><title>Work the First Words</title>
+   <para>The first words that you set up in your dictionary will be the easiest and will have the most impact. </para>
+   <para>Prerequisites: Have the dictionary file in a spreadsheet.</para>
+   <para>Effort: This will require less than an hour.</para>
+   <procedure><title>To work through the most used words in your dictionary:</title>
+		
+		<step>In the word with the highest count, set the Part of Speech (PoS).
+			<para>A typical result for the most used words are the names of your organization or product.
+				ASD-STE calls these <emphasis>technical names</emphasis>. Set the <guilabel>PoS</guilabel> of the technial names in the top results as <literal>Name</literal>.</para><para>
+				This lets you filter for proper nouns which change more often than regular nouns. For example, the company name will change if your organization delivers a white label product.</para>
+		</step>
+		<step>
+			<para>Enter the PoS for the other most common words, such as <wordasword>the that this from</wordasword>. When you get to a word that is may be used in multiple parts of speech and 
+			is not a common word for all English content, skip it.</para>
+		</step>
+		
+		<step>In the <guilabel>Allowed</guilabel> column, enter <literal>T</literal> (for true) or <literal>F</literal> (for false).<para>Most of these first words will be allowed.</para></step>
+		<step>In the <guilabel>Audience</guilabel> column, enter <literal>all</literal> or select a persona from the list, if you are sure this word will be allowed only for this persona.</step>
+   </procedure>
+  </section>
+  <section>
+	<title>Examples of the First Words</title>
+	  <itemizedlist>
+	  <listitem>
+		<para>In our example, one of the product or company names is the word with the highest frequency. We set its PoS as <literal>Name</literal> and set <guilabel>Allowed</guilabel> to <literal>T</literal>.
+		We set <guilabel>Audience</guilabel> to <literal>all</literal>. We do not set a value for the other columns yet.</para>
+	<imagedata fileref="images/words01.png" />
+	</listitem>
+	<listitem><para>
+			In the top words, we have many that are clearly to be allowed: <wordasword>this that will with from your</wordasword>. These are pronouns, prepositions, and modular verbs. 
+			In a technical writing dictionary for native speakers, it does not give a lot of information to define the PoS. Is <wordasword>that</wordasword> a pronoun, adverb, conjunction, or determiner? 
+			We set a rule that we do not use minimalist rules. 
+			If <wordasword>that</wordasword> helps make a sentence easier to understand, we use it. 
+			</para>
+		<imagedata fileref="images/words02.png" />
+	</listitem>
+	<listitem><para>We have words that are industry standard for software technical writing: <wordasword>
+			introduction
+user
+data
+attributes
+attribute
+example
+organisation</wordasword>. Later, we will enter a specific deinition for these words. For now, we set the <guilabel>PoS</guilabel>, set <guilabel>Allowed</guilabel> to <literal>T</literal>, and set <guilabel>Audience</guilabel> to <literal>all</literal>.</para>
+			<note><wordasword>attribute</wordasword> and <wordasword>attributes</wordasword> are two items. 
+			We restrict the values of the <guilabel>Word</guilabel> and <guilabel>ALT</guilabel> columns to one word or phrase, to prepare for a checker tool that might be a simple Python script.
+			<para id="specifictool">If you know that you will use a specific AI-driven tool, such as writer.com or jasper.ai, change the dictionary headers and values to work with the aquired tool.</para>
+			</note>
+			</listitem>
+		<listitem><para>See <wordasword>organisation</wordasword>. We know we need this word, but this spelling is British. We know our rules will tell us to use American spelling. In this case, we will make a decision for our dictionary without
+			analysis, or to put it more accurately, despite analysis. The spelling of <wordasword>organisation</wordasword> is the most commonly used form, but we will not use it. We will use the American spelling.
+				<procedure>
+					<step><para>Sort the complete range of dictionary alphabetically, by <wordasword>Word</wordasword>.</para></step>
+					<step><para>Set <wordasword>organization</wordasword> and <wordasword>organizations</wordasword> as allowed (<literal>T</literal> in <guilabel>Allowed</guilabel>).</para></step>
+					<step><para>Set the British <wordasword>organisation</wordasword> and <wordasword>organisations</wordasword> as not allowed (<literal>F</literal> in <guilabel>Allowed</guilabel>).</para></step>
+					<step><para>In the allowed words, set the definition: <literal>nonspecific body of people with a purpose</literal>.</para><para>We will use <wordasword>organisation</wordasword> for a 
+					company, nonprofit org, military base, and all similar bodies.</para></step>
+					<step><para>In ALT1 for <wordasword>organisation</wordasword> and <wordasword>organisations</wordasword>, enter <wordasword>organization</wordasword> and <wordasword>organizations</wordasword>.</para></step>
+				</procedure>	
+			<imagedata fileref="images/words03.png" />	
+			</para>
+			<note>Why not add <wordasword>organizational</wordasword> on the fly? Answer: It is used only one time. We will analyze the text and find a more common rewrite in that one sentence. Or maybe that one 
+			instance is for <wordasword>Organizational Unit (OU)</wordasword> in Active Directory. If so, we will make that phrase a "word".</note>
+			</listitem>
+		</itemizedlist>
+	  <para>Sort the range by Count. We are done with the easiest words. Next: analyze words in their syntax and by content to make decisions for the dictionary.</para>
+
+  </section>
+</article>

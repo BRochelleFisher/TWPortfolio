@@ -1,5 +1,0 @@
-Typefying inline text:
-Words in the dictionary:  <wordasword>
-Columns in the dictionary file and other GUI features: <guilabel>
-Terms: <emphasis>
-Text to enter as-is:  <literal>

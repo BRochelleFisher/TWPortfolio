@@ -148,15 +148,24 @@
 			<para><guilabel>Audience</guilabel> = all</para></step>
 		<step>We see that there many uses of <wordasword>type</wordasword> in the GUI and CLI. We could try to make it a technical name for user interface (UX) creators. The word <wordasword>type</wordasword> would be allowed in
 		microcopy and coding but not in technical writing. 
-		<para><imagedata fileref="images/wors_type03.png" /></para>
-		<para>But we see in the results that <wordasword>type</wordasword> is used in text that cannot easily be rewritten. We must allow it for everyone, but only with the required definition, as an object in the product. 
-		a><guilabel>Rule</guilabel> = only as product object - rewrite if meant general </para>
+			<para><imagedata fileref="images/words_type03.png" /></para>
+			<para>But we see in the results that <wordasword>type</wordasword> is used in text that cannot easily be rewritten. We must allow it for everyone, but only with the required definition, as an object in the product.</para>
+			<para><guilabel>Word</guilabel> = type</para>
+			<para><guilabel>PoS</guilabel> = name</para>
+			<para><guilabel>Definition</guilabel> = representation of group of objects with common characteristics</para>
+			<para><guilabel>Allowed</guilabel> = T</para>
+			<para><guilabel>Audience</guilabel> = All</para>
+			<para><guilabel>Rule</guilabel> = only as product object - rewrite if meant general</para>
 		</step>
-		
-		<step>
-		We look through the uses of <wordasword>type</wordasword> to mean a general group of people or things having common characteristics. We can rewrite those. 
-		<para>Exmaples:</para>
-		<table>
+		<step>Make sure the style guide rule that all text on the interface (GUI, API, or CLI) must be wrapped in an element, such as &lt;code&gt;, &lt;codeblock&gt;, &lt;guilable&gt;. 
+		We can then set the checker tool to ignore text in these elements. 
+		If your checker tool shows the rules, it will not show this rule for interface labels, where it would cause user fatigue and be ignored when it is necessary.</step>
+		<step>We look through the uses of <wordasword>type</wordasword> to mean a general group of people or things having common characteristics. We can rewrite those. 
+		</step>
+	
+	</procedure>
+	<table><title>Examples of Corrected Text for <wordasword>type</wordasword></title>
+		<tgroup cols="3">
 			<thead>
 				<row>
 					<entry>Text</entry>
@@ -183,19 +192,8 @@
 					Also note that we removed <wordasword>two</wordasword>. It is always best to not enumerate features, to make sure you do not create a conflict in the text when a new feature is added.</entry>
 				</row>
 			</tbody>
+			</tgroup>
 		</table>
-		
-			<para><guilabel>Word</guilabel> = type</para>
-			<para><guilabel>PoS</guilabel> = name</para>
-			<para><guilabel>Definition</guilabel> = representation of group of objects with common characteristics</para>
-			<para><guilabel>Allowed</guilabel> = T</para>
-			<para><guilabel>Audience</guilabel> = All</para>
-			
-		</step>
-		<step>Create a style guide rule that all text on the interface (GUI, API, or CLI) must be wrapped in an element, such as &lt;code&gt;, &lt;codeblock&gt;, &lt;guilable&gt;. We can then set the checker tool to ignore text in these elements. 
-		If your checker tool shows the rules, it will not show them for interface labels, where it would cause user fatigue and be ignored when it is necessary.
-		</step>
-	</procedure>
 	<procedure>
 		<title>Analyzing Ones and Twos:</title>
 		<para>When you are done with the top twenty or thirty words, resort your dictionary to look at the words used only one or two times. These words will be easy to set as not allowed or as commands or misspellings. </para>
@@ -205,8 +203,8 @@
 			says to wrap commands in relevant elements.</para></listitem>
 			<listitem><para>If the word is a mistake, in <guilabel>PoS</guilabel>, enter <literal>misspelling</literal>. When your content is fixed for this mistake, you can remove it from the dictionary.</para></listitem>
 			<listitem><para>If the word is correct and allowed, investigate. If it is a word from Marketing or UX, set it to allowed for that audience. If a product owner or sponsor wants it for everyone, discuss why.</para>
-				<para>For example, <wordasword>absent</wordasword> is used on time, in the phrase <wordasword>absent a route</wordasword>. This is a specific network configuration action. It is correct. We allow it for 
-				the audiences user, sysadmin, and internal. But we do not want it in the UX microcopy or C-level marketing.</para>
+				<para>For example, <wordasword>absent</wordasword> is used one time, in the phrase <wordasword>absent a route</wordasword>. This is a specific network configuration action. It is correct. We allow it for 
+				the user, sysadmin, and internal audiences. But we do not want it in the UX microcopy or C-level marketing.</para>
 			</listitem>
 		</itemizedlist>
 		

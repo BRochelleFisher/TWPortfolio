@@ -152,7 +152,7 @@
 			<para>But we see in the results that <wordasword>type</wordasword> is used in text that cannot easily be rewritten. We must allow it for everyone, but only with the required definition, as an object in the product.</para>
 			<para><guilabel>Word</guilabel> = type</para>
 			<para><guilabel>PoS</guilabel> = name</para>
-			<para><guilabel>Definition</guilabel> = representation of group of objects with common characteristics</para>
+			<para><guilabel>Definition</guilabel> = product group of objects with common characteristics</para>
 			<para><guilabel>Allowed</guilabel> = T</para>
 			<para><guilabel>Audience</guilabel> = All</para>
 			<para><guilabel>Rule</guilabel> = only as product object - rewrite if meant general</para>
@@ -188,7 +188,7 @@
 				<row>
 					<entry>there are two types of admins: Org Admins and Site Admins</entry>
 					<entry>there are different admin levels: Org Admins and Site Admins</entry>
-					<entry>The use of <wordasword>type</wordasword> is not required. If the SME does not like <wordasword>level</wordasword>, we can change it to a different word (set, permissions). 
+					<entry>The use of <wordasword>type</wordasword> is not required. If the SME does not like <wordasword>level</wordasword>, we can change it to a different word (<wordasword>set</wordasword>, <wordasword>permissions</wordasword>). 
 					Also note that we removed <wordasword>two</wordasword>. It is always best to not enumerate features, to make sure you do not create a conflict in the text when a new feature is added.</entry>
 				</row>
 			</tbody>

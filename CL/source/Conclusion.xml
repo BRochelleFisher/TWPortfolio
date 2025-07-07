@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.2" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>What Now?</title>
+
+    <!-- <author>
+      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
+    </author> -->
+
+    <!-- <pubdate>7 July 2025</pubdate> -->
+  </info>
+  <para>You have a dictionary in progress. You must go through all the words, update the definitions and rules as you go. It requires about an hour to go through 20 words when you get used to it.</para>
+  <para>You will need some kind of checker tool. You can ask a Python developer to make a script that returns an email or a webpage with results (unallowed words used, rules as reminders on allowed words, and 
+unknown words). Or you can acquire an AI tool that integrates with your source CCMS. The important thing is that your dictionary is used. It is a dynamic tool for all content creators in your organization.  </para>
+ </article> 

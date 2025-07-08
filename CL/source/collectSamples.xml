@@ -10,6 +10,7 @@
          xmlns:db="http://docbook.org/ns/docbook">
   <info>
     <title>Collecting Samples</title>
+    <title>Collecting Samples</title>
 
     <!-- <author>
       <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
@@ -25,6 +26,6 @@
 		<listitem>OpenCTI. (2025) OpenCTI User Guide: Manual Creations. &#169; 2025 Filigran. All rights reserved. https://docs.opencti.io/latest/usage/manual-creation/</listitem>
 		<listitem>MISP. (2024) MISP User Guide: A Threat Sharing Platform. GPL and CC-BY-SA 4.0 international.</listitem>
 	</itemizedlist>
-	<para>You can collect your samples or complete content as PDF, DOC, DOCX, HTML, or text. Combine all the samples to one file. Convert the file to plain text. Keep this file. You will use it 
+	<para>You can collect your samples or complete content as PDF, DOC, DOCX, HTML, or text. Aggregate all the samples to one file. Convert the file to plain text. Keep this file. You will use it 
 	as input the Python script and as the main source for word analysis.</para>
  </article> 

@@ -18,5 +18,5 @@
     <!-- <xi:include href="CreateDictionaryFile.xml"/> -->
     <xi:include href="workWords.xml"/>
 	<xi:include href="AnalyzeWords.xml"/>
-
+	<xi:include href="Conclusion.xml"/>
 </book>

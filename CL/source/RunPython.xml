@@ -21,10 +21,10 @@
   <section>
     <title>Create and Run the Word Counter Python Script</title>
 
-    <para>To create the dictionary, we start with the unique words used and how many times each word is used in our sample. This Python script will give us an aggregated file, formatted for easy import to a spreadsheet.</para>
+    <para>To create the dictionary, we start with the unique words used and how many times each word is used in our sample. This Python script will give us a file formatted for easy import to a spreadsheet.</para>
 	<procedure>
 		<title>To create and run the python script word_counter.py:</title>
-		<step>Save your aggregated sample as <literal>sampleAgg.txt</literal>.</step>
+		<step>Save your combined sample as <literal>sampleAgg.txt</literal>.</step>
 		<step>Copy this script in a text editor.</step>
 		<step>In the same folder as <literal>sampleAgg.txt</literal>, save the file as <literal>word_counter.py</literal>.</step>
 		<step>Run the python script: 

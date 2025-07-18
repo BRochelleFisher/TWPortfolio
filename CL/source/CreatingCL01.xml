@@ -22,39 +22,10 @@
     <title>What is a Controlled Language?</title>
 
     <para>A Controlled Language (CL) is set of rules for grammar, sentence
-    length, and vocabulary. The rules define a subset of the natural language
-    as allowed. Specifically in technical writing, many CLs limit the verbs
-    you can use. This enforces consistency for all your documentation and
+    length, and vocabulary. The rules define words and grammar as allowed or not allowed. 
+	This enforces consistency for all your documentation and
     conforms to or builds an industry standard for your products.</para>
-
-    <section>
-      <title>CL or Taxonomy?</title>
-
-      <para>In general terms, a taxonomy is a structured CL, with parents and
-      children. For example, in biology the taxonomy is: kingdom, phylum, class, order, family, genus, species. In
-      Artificial Intelligence (AI), the taxonomy may be: AI, Machine Learning,
-      Human Crowd-Sourced, Neural Networks, Deep Learning. </para>
-
-      <para>In technical writing, the taxonomy is usually for different
-      audiences of a product: system administrator, basic end-user, advanced
-      end-user, superuser, C-level decision maker. There will be a default CL,
-      with all the rules that apply to all audiences, and a dictionary for
-      each personna. For example, a taxonomy for a decision maker will be used
-      mainly by Marketing and will allow the word
-      <wordasword>leverage</wordasword> with the meaning "to use a foundation
-      feature to reach the solution for which the product exists". For all other audiences, the word <wordasword>leverage
-      </wordasword>is not allowed, and its alternative is
-      <wordasword>use</wordasword>.</para>
-
-      <para>A Taxonomy Manager for a company that creates a shopping app for
-      SmartPhones will be in charge of labeling strategies for search results. A Taxonomy Manager for a cyber
-      security company will create a CL for different audiences and acquire a
-      tool to enforce it. With this ambiguity, we will make our first rule:
-      <wordasword>taxonomy</wordasword> is not allowed in this documentation, and
-      its alternative is <wordasword>CL</wordasword>(the full vocabulary and rules) or <wordasword>dictionary</wordasword> (a subset of the CL for a specific audience). </para>
-    </section>
-
-    <section>
+<section>
       <title>Benefits of a CL</title>
 
       <para>Adopting and enforcing a CL is the solution to many technical
@@ -62,7 +33,7 @@
 
       <itemizedlist>
         <listitem>
-          <para>If your organization has a team of writers, the CL enforces
+          <para>For a team of writers, the CL enforces
           consistency of the content among the writers. If you have one
           writer, the CL enforces consistency over time among the
           documents.</para>
@@ -70,21 +41,21 @@
 
         <listitem>
           <para>If you translate your content, the reduced vocabulary and
-          grammar and the re-use of matching content, makes translation
+          grammar, and the re-use of matching content, makes translation
           significantly cheaper and often of better quality.</para>
         </listitem>
 
         <listitem>
-          <para>If you have a global market but do not have the budget for
-          localization, the CL makes it easier for non-native speakers to read
+          <para>For a product with a global market but without a budget for
+          translation, the CL makes it easier for non-native speakers to read
           and use your documentation correctly. If your documentation is
           online, built-in machine translation (such as Google Translate) will
           give better results.</para>
         </listitem>
 
         <listitem>
-          <para>If the technical writers in your organization internalize your
-          CL and re-use strategy, their productivity will increase.</para>
+          <para>With writer buy-in of the 
+          CL and re-use strategy, productivity will increase.</para>
         </listitem>
 
         <listitem>
@@ -96,6 +67,30 @@
         </listitem>
       </itemizedlist>
     </section>
+    <section>
+      <title>CL or Taxonomy?</title>
+
+      <para>In general terms, a taxonomy is a structured CL, with parents and
+      children. For example, in biology the taxonomy has: class -> order -> family -> genus -> species.</para>
+
+      <para>In technical writing, the taxonomy is usually for different
+      audiences of a product, from marketing to technical: all > C-level decision maker > user -> advanced
+      user -> system administrator. There will be a default CL,
+      with all the rules that apply to all audiences, and a dictionary for
+      each personna. For example, a taxonomy for a decision maker will be used
+      mainly by Marketing and will allow the word
+      <wordasword>leverage</wordasword> with the meaning "to use a foundation
+      feature to reach the solution for which the product exists". For all other audiences, the word <wordasword>leverage
+      </wordasword> is not allowed, and its alternative is
+      <wordasword>use</wordasword>.</para>
+
+      <para>A Taxonomy Manager for a company that creates a shopping app for
+      SmartPhones will be in charge of labeling strategies for search results. A Taxonomy Manager for a cybersecurity company will create a CL for different audiences and use a
+      tool to enforce it. To keep things simple in this guide, we will not use the word
+      <wordasword>taxonomy</wordasword>. We will use the word <wordasword>CL</wordasword> (Controlled Language) for the default vocabulary and the rule set, or <wordasword>dictionary</wordasword> for a subset of the CL for a specific audience. </para>
+    </section>
+
+    
   </section>
 
   <section>
@@ -106,7 +101,7 @@
     for cybersecurity.</para>
 
     <para>If you use part, parts, or all of this project for personal use, for
-    profit, or for an organization (non-profit or for-profit), you must
+    profit, or for an organization (non-profit or for-profit), please
     include a reference to this project or its documentation. </para>
 
     <para><emphasis role="bold">Reference Example:</emphasis></para>

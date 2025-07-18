@@ -3,4 +3,4 @@ java -jar "C:\Program Files\Saxonica\saxon-he-12.7.jar" -s:CL\source\CreatingCL0
 C:\Users\17634\OneDrive\Documents\GitHub\TWPortfolio>java -jar "C:\Program Files\Saxonica\saxon-he-12.7.jar" -s:CL\source\workWords.xml -xsl:C:\Users\17634\SamplesTWPlus\docbook-xsl-snapshot\html\docbook.xsl -o:CL\output\workWords.html
 
 java -jar "C:\Program Files\Saxonica\saxon-he-12.7.jar" -xi -s:CL\source\BookCL_RF.xml -xsl:C:\Users\17634\SamplesTWPlus\docbook-xsl-snapshot\html\docbook.xsl -o:CL\output\BookCL_RF.html
-java -jar "C:\Program Files\Saxonica\saxon-he-12.7.jar" -xi -s:CL\source\BookCL_RF.xml -xsl:C:\docbook-xsl-snapshot\html\docbook.xsl -o:CL\output\BookCL_RF.html
+java -jar "C:\Program Files\Saxonica\saxon-he-12.7.jar" -xi -s:CL\source\BookCL_RF.xml -xsl:C:\docbook-xsl-snapshot\html\docbook.xsl -o:CL\output\BookCL_RF.html CL\output\html.stylesheet="styles.css"

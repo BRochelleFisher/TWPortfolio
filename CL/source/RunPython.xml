@@ -9,7 +9,7 @@
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns:db="http://docbook.org/ns/docbook">
   <info>
-    <title>Creating Word List</title>
+    <title>Creating the Word List</title>
 
     <!-- <author>
       <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
@@ -33,40 +33,63 @@
 		</procedure>
 		<programlisting linenumbering="numbered" language="python">
 import re
-import string
 import sys
 from collections import Counter
 
-def analyze_document_frequency(filepath="sampleAgg.txt"):
-    
+def analyze_document_frequency(filepath: str = "sampleAgg.txt"):
+    """
+    Analyzes a text document to count word frequency.
+
+    This function reads a text file, converts its content to lowercase,
+    extracts words between 4 and 15 characters long,
+    and counts the occurrences of each extracted word. It prints
+    the words sorted by frequency in descending order, then alphabetically for ties.
+
+    Args:
+        filepath (str): The path to the input text file. Defaults to "sampleAgg.txt".
+
+    Returns:
+        None: Prints the word frequencies to standard output. Errors are printed to stderr.
+    """
     try:
+        # Open and read the document, converting content to lowercase.
+        # 'utf-8' encoding is specified for broad compatibility.
         with open(filepath, 'r', encoding='utf-8') as document_file:
             text_string = document_file.read().lower()
     except FileNotFoundError:
+        # Handle the case where the specified input file does not exist.
         print(f"Error: The file '{filepath}' was not found.", file=sys.stderr)
         return
     except Exception as e:
-        print(f"An error occurred while reading the file: {e}", file=sys.stderr)
+        # Catch other general exceptions during file reading.
+        print(f"An unexpected error occurred while reading the file: {e}", file=sys.stderr)
         return
 
+    # Use regular expression to find all words.
+    # '\b' ensures whole words. '[a-z]{4,15}' matches lowercase letters between 4 and 15 characters.
     match_pattern = re.findall(r'\b[a-z]{4,15}\b', text_string)
 
+    # Count word occurrences using collections.Counter for efficiency.
     word_counts = Counter(match_pattern)
 
+    # Sort words: primary key is count (descending), secondary key is word (ascending).
+    # Lambda function creates a tuple for sorting: (-count) for descending, then word for ascending.
     sorted_words = sorted(word_counts.items(), key=lambda item: (-item[1], item[0]))
 
     print("Word Frequencies:")
     print("-----------------")
+    # Iterate through the sorted words and print each word and its count, separated by a pipe.
     for word, count in sorted_words:
         print(f"{word} | {count}")
 
 if __name__ == "__main__":
+    # Make sure the function runs only when the script is executed directly, not when imported as a module.
     analyze_document_frequency()
 		</programlisting>
-		<note><title>Note on Code Source</title>
-		<para>This code started with the python script in <emphasis>Alchemy of Tomes</emphasis> <citation>Fisher (2020)</citation>, which
+		<para><b>Note on Code Source</b>
+		This code started with the python script in <emphasis>Alchemy of Tomes</emphasis> <citation>Fisher (2020)</citation>, which
 		does not work in the latest Python versions. We used Gemini (Google AI) to update this script.</para>
-		</note>
+		
 	</section>
 	<section>
 	 <title>Create the Dictionary File</title>

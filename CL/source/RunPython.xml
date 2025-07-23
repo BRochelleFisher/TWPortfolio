@@ -86,7 +86,7 @@ if __name__ == "__main__":
     # Make sure the function runs only when the script is executed directly, not when imported as a module.
     analyze_document_frequency()
 		</programlisting>
-		<para><b>Note on Code Source</b>
+		<para>Note on Code Source:  
 		This code started with the python script in <emphasis>Alchemy of Tomes</emphasis> <citation>Fisher (2020)</citation>, which
 		does not work in the latest Python versions. We used Gemini (Google AI) to update this script.</para>
 		

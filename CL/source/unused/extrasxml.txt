@@ -1,0 +1,14 @@
+
+
+<itemizedlist>
+			<listitem><para>If you do not allow the word, do not enter a definition. Enter an alternative word. If there are multiple
+			alteratives, enter one word in each ALT column. You can add more ALT columns if required. In the Allowed column, enter F
+			(for false).</para></listitem>
+			<listitem><para>If you allow the word, enter a definition. Leave the ALT columns blank.</para></listitem>
+		</itemizedlist>
+		
+		
+		<step>If the word is not allowed, paste the example from your sample in Bad Example.
+		In Good Example, enter the rewritten phrase or sentence with the correct allowed alternative.
+		If the word is allowed, paste your sample in Good Example, and leave Bad Example blank. In the Allowed column, enter T (for true).
+		</step>

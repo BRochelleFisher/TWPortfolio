@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <article version="5.2" xmlns="http://docbook.org/ns/docbook"
          xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -78,7 +77,7 @@
       audiences of a product, from marketing to technical: all > C-level decision maker > user -> advanced
       user -> system administrator. There will be a default CL,
       with all the rules that apply to all audiences, and a dictionary for
-      each personna. For example, a taxonomy for a decision maker will be used
+      each persona. For example, a taxonomy for a decision maker will be used
       mainly by Marketing and will allow the word
       <wordasword>leverage</wordasword> with the meaning "to use a foundation
       feature to reach the solution for which the product exists". For all other audiences, the word <wordasword>leverage
@@ -86,7 +85,7 @@
       <wordasword>use</wordasword>.</para>
 
       <para>A Taxonomy Manager for a company that creates a shopping app for
-      SmartPhones will be in charge of labeling strategies for search results. A Taxonomy Manager for a cybersecurity company will create a CL for different audiences and use a
+      Smart Phones will be in charge of labeling strategies for search results. A Taxonomy Manager for a cybersecurity company will create a CL for different audiences and use a
       tool to enforce it. To keep things simple in this guide, we will not use the word
       <wordasword>taxonomy</wordasword>. We will use the word <wordasword>CL</wordasword> (Controlled Language) for the default vocabulary and the rule set, or <wordasword>dictionary</wordasword> for a subset of the CL for a specific audience. </para>
     </section>
@@ -113,119 +112,3 @@
 	<para>Copyright&#169; 2025 Rochelle Fisher. All Rights Resrved. Original work for private use.</para>-->
   </section>
 </article>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<article version="5.2" xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:trans="http://docbook.org/ns/transclusion"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
-  <info>
-    <title>Introduction to Controlled Languages</title>
-
-   <!--  <author>
-      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
-    </author>
-
-    <pubdate>19 June 2025</pubdate> -->
-  </info>
-
-  <section>
-    <title>What is a Controlled Language?</title>
-
-    <para>A Controlled Language (CL) is set of rules for grammar, sentence
-    length, and vocabulary. The rules define words and grammar as allowed or not allowed. 
-	This enforces consistency for all your documentation and
-    conforms to or builds an industry standard for your products.</para>
-<section>
-      <title>Benefits of a CL</title>
-
-      <para>Adopting and enforcing a CL is the solution to many technical
-      writing issues.</para>
-
-      <itemizedlist>
-        <listitem>
-          <para>For a team of writers, the CL enforces
-          consistency of the content among the writers. If you have one
-          writer, the CL enforces consistency over time among the
-          documents.</para>
-        </listitem>
-
-        <listitem>
-          <para>If you translate your content, the reduced vocabulary and
-          grammar, and the re-use of matching content, makes translation
-          significantly cheaper and often of better quality.</para>
-        </listitem>
-
-        <listitem>
-          <para>For a product with a global market but without a budget for
-          translation, the CL makes it easier for non-native speakers to read
-          and use your documentation correctly. If your documentation is
-          online, built-in machine translation (such as Google Translate) will
-          give better results.</para>
-        </listitem>
-
-        <listitem>
-          <para>With writer buy-in of the 
-          CL and re-use strategy, productivity will increase.</para>
-        </listitem>
-
-        <listitem>
-          <para>Reduce your content by at least 30% without loss
-          of information. Concise documentation makes it easier for users to
-          find what is relevant to them at the time, makes clear to
-          reviewers and stake-holders what is not relevant or incorrect, and
-          makes the documented steps easier to follow.</para>
-        </listitem>
-      </itemizedlist>
-    </section>
-    <section>
-      <title>CL or Taxonomy?</title>
-
-      <para>In general terms, a taxonomy is a structured CL, with parents and
-      children. For example, in biology the taxonomy has: class -> order -> family -> genus -> species.</para>
-
-      <para>In technical writing, the taxonomy is usually for different
-      audiences of a product, from marketing to technical: all > C-level decision maker > user -> advanced
-      user -> system administrator. There will be a default CL,
-      with all the rules that apply to all audiences, and a dictionary for
-      each personna. For example, a taxonomy for a decision maker will be used
-      mainly by Marketing and will allow the word
-      <wordasword>leverage</wordasword> with the meaning "to use a foundation
-      feature to reach the solution for which the product exists". For all other audiences, the word <wordasword>leverage
-      </wordasword> is not allowed, and its alternative is
-      <wordasword>use</wordasword>.</para>
-
-      <para>A Taxonomy Manager for a company that creates a shopping app for
-      SmartPhones will be in charge of labeling strategies for search results. A Taxonomy Manager for a cybersecurity company will create a CL for different audiences and use a
-      tool to enforce it. To keep things simple in this guide, we will not use the word
-      <wordasword>taxonomy</wordasword>. We will use the word <wordasword>CL</wordasword> (Controlled Language) for the default vocabulary and the rule set, or <wordasword>dictionary</wordasword> for a subset of the CL for a specific audience. </para>
-    </section>
-
-    
-  </section>
-
-  <section>
-    <title>Scope of Project</title>
-
-    <para>This is a personal project of Rochelle Fisher, July 2025. The goal
-    is to make a sample of technical writing and a sample of a proprietary CL
-    for cybersecurity.</para>
-
-    <para>If you use part, parts, or all of this project for personal use, for
-    profit, or for an organization (non-profit or for-profit), please
-    include a reference to this project or its documentation. </para>
-
-    <para><emphasis role="bold">Reference Example:</emphasis></para>
-
-    <para><literal>Rochelle Fisher, Sample Cyber Security CL, version 1.0, July 2025</literal>.</para>
-  
-	<!--<para>-\-\-\-</para>
-	<para>Copyright&#169; 2025 Rochelle Fisher. All Rights Resrved. Original work for private use.</para>-->
-  </section>
-</article>
->>>>>>> d08c3b3446c2949be6d64c58f68a19269314f062

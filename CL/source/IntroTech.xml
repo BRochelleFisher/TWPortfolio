@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <article version="5.2" xmlns="http://docbook.org/ns/docbook"
          xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -49,55 +48,3 @@
 	
   </section>
 </article>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<article version="5.2" xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:trans="http://docbook.org/ns/transclusion"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
-  <info>
-    <title>Introduction to Controlled Languages</title>
-
-   <!--  <author>
-      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
-    </author>
-
-    <pubdate>19 June 2025</pubdate> -->
-  </info>
-
-  
-
-    <para>A Controlled Language (CL) is set of rules for grammar, sentence
-    length, and vocabulary. The rules define words and grammar as allowed or not allowed. 
-	This enforces consistency for all your documentation and
-    conforms to or builds an industry standard for your products.</para>
-<section>
-  <title>Intended Audience</title>
-  <para>This document is for a developer or technical writer with coding experience. Python installation is a requirement. If you are a linguist or 
-  responsible for the content of your organization, but do not have Python, you can share this document with a developer or IT. They can run the scripts,
-  and you can continue with the CL itself when they are done.</para>
-</section>
-  <section>
-    <title>Scope of Project</title>
-
-    <para>This is a personal project of Rochelle Fisher, July 2025. The goal
-    is to make a sample of technical writing and a sample of a proprietary CL
-    for cybersecurity.</para>
-
-    <para>If you use part, parts, or all of this project for personal use, for
-    profit, or for an organization (non-profit or for-profit), please
-    include a reference to this project or its documentation. </para>
-
-    <para><emphasis role="bold">Reference Example:</emphasis></para>
-
-    <para><literal>Rochelle Fisher, Sample Cyber Security CL, version 1.0, July 2025</literal>.</para>
-  
-	
-  </section>
-</article>
->>>>>>> d08c3b3446c2949be6d64c58f68a19269314f062

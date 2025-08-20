@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <article version="5.2" xmlns="http://docbook.org/ns/docbook"
          xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -43,49 +42,3 @@
 	</procedure>
 	<para>The script sorted the output by highest frequency to lowest. Start with the words most used. These will be the easiest.</para>
 </article>		
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<article version="5.2" xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:trans="http://docbook.org/ns/transclusion"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
-  <info>
-    <title>Create the Dictionary File</title>
-
-    <!-- <author>
-      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
-    </author> -->
-
-    <!-- <pubdate>25 June 2025</pubdate> -->
-  </info>
-
-  
-   <para>With three small samples of cybersecurity documentation from different organizations, the Python script gave us 4755 unique words.
-   Your sample will be much larger. Your goal is to create a cybersecurity dictionary of approximately 1,000 words. This does not include product names
-   or company-specific words. </para>
-   <para>Prerequisites: Run the Python script.</para>
-   <para>Effort: Use the output file from the Python script to create the dictionary file. This will require approximately ten minutes.</para>
-   <procedure><title>To create the dictionary file:</title>
-     <step><para>Import the output file to a spreadsheet.</para>
-			<para>We will use Google Sheets. You can use Microsoft Excel or 
-		similar.
-			</para>
-			<para>Our Python script uses a pipe ( | ) as a delimiter between the word and its frequency of use. When you import the file, set the pipe as the delimiter.
-			</para>
-		</step>
-     <step><para>Set the column headers.</para>
-	
-		<para>If you do not have a checker tool yet, change row 1 to be these headers: <literal>Word, Count, Part of Speech, Definition, Good Example, Bad Example, Allowed?, Audience, Alt1, Alt2, Rule</literal>.</para>
-		</step>
-     <step><para>If there are rows between the header row and the first word, delete them.</para></step>
-     <step><para>In a separate tab, enter your audience personas in one column. Make sure <literal>all</literal> is in this list.</para></step>
-     <step><para>In the main tab, <guilabel>Audience</guilabel> column, set data validation to select the persona from the list.</para></step>
-	</procedure>
-	<para>The script sorted the output by highest frequency to lowest. Start with the words most used. These will be the easiest.</para>
-</article>		
->>>>>>> d08c3b3446c2949be6d64c58f68a19269314f062

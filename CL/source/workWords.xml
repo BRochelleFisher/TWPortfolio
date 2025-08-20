@@ -27,7 +27,7 @@
    	<step><para>In the word with the highest count, set the Part of Speech (PoS).</para>
 			<para>A typical result for the most used words are the names of your organization or product.
 				ASD-STE calls these <emphasis>technical names</emphasis>. Set the <guilabel>PoS</guilabel> 
-				of the technial names in the top results as <literal>Name</literal>.</para>
+				of the technical names in the top results as <literal>Name</literal>.</para>
    		<para>
    			This lets you filter for proper nouns which change more often than regular nouns. </para>
    		<para>
@@ -82,14 +82,14 @@ attributes
 attribute
 example
 organisation</wordasword>. 
-			Later, we will enter a specific deinition for these words. For now, we set the <guilabel>PoS</guilabel>, 
+			Later, we will enter a specific definition for these words. For now, we set the <guilabel>PoS</guilabel>, 
 			set <guilabel>Allowed</guilabel> to <literal>T</literal>, and set <guilabel>Audience</guilabel> to <literal>all</literal>.</para>
 			<para><wordasword>attribute</wordasword> and <wordasword>attributes</wordasword> are two items. </para>
 		<para>
 			We restrict the values of the <guilabel>Word</guilabel> and <guilabel>ALT</guilabel>
 			columns to one word or phrase, to prepare for a checker tool that might be a simple Python script.</para>
 			<para>If you know that you will use a specific AI-driven tool, such as writer.com or jasper.ai, change the dictionary 
-				headers and values to work with the aquired tool.</para>
+				headers and values to work with the acquired tool.</para>
 		
 			</listitem>
 		<listitem><para>See <wordasword>organisation</wordasword>. We know we need this word, but this spelling is British. We know our rules will tell us to use American spelling. In this case, we will make a decision for our dictionary without

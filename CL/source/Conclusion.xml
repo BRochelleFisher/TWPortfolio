@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <article version="5.2" xmlns="http://docbook.org/ns/docbook"
          xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -47,7 +46,7 @@
         <para>For example, <wordasword>absent</wordasword> is used one time, in the phrase
             <wordasword>absent a route</wordasword>. This is a specific network configuration
           action. It is correct. We allow it for the user, sysadmin, and internal audiences. But we
-          do not want it in the UX microcopy or C-level marketing.</para>
+          do not want it in the UX micro-copy or C-level marketing.</para>
       </listitem>
     </itemizedlist>
   </para>
@@ -58,64 +57,3 @@
     dictionary is used. It is a dynamic tool for all content creators in your organization. </para>
   <para/>
  </article> 
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<article version="5.2" xmlns="http://docbook.org/ns/docbook"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
-         xmlns:xi="http://www.w3.org/2001/XInclude"
-         xmlns:trans="http://docbook.org/ns/transclusion"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns:m="http://www.w3.org/1998/Math/MathML"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:db="http://docbook.org/ns/docbook">
-  <info>
-    <title>What Now?</title>
-
-    <!-- <author>
-      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
-    </author> -->
-
-    <!-- <pubdate>7 July 2025</pubdate> -->
-  </info>
-  <para>You have a dictionary in progress. You must go through all the words, update the definitions
-    and rules as you go. </para>
-  <para>
-    <itemizedlist>
-      <para>When you are done with the top twenty or thirty words, sort your dictionary to see at
-        the words with only one count. These words will be easy to set as not allowed, commands, or
-        misspellings. </para>
-      <listitem>
-        <para>If the word is not allowed, set its values. Make sure the alternative words are
-          allowed.</para>
-      </listitem>
-      <listitem>
-        <para>If the word is a command, in <guilabel>PoS</guilabel>, enter
-            <literal>command</literal>. Set it to <guilabel>Allowed</guilabel> =
-            <literal>T</literal>. Make sure your style guide says to wrap commands in relevant
-          elements.</para>
-      </listitem>
-      <listitem>
-        <para>If the word is a mistake, in <guilabel>PoS</guilabel>, enter
-            <literal>misspelling</literal>. When your content is fixed for this mistake, you can
-          remove it from the dictionary.</para>
-      </listitem>
-      <listitem>
-        <para>If the word is correct and allowed, investigate. If it is a word for a specific
-          audience, set it to <guilabel>Allowed</guilabel> for that audience. If a product owner or sponsor wants it for
-          everyone, discuss why.</para>
-        <para>For example, <wordasword>absent</wordasword> is used one time, in the phrase
-            <wordasword>absent a route</wordasword>. This is a specific network configuration
-          action. It is correct. We allow it for the user, sysadmin, and internal audiences. But we
-          do not want it in the UX microcopy or C-level marketing.</para>
-      </listitem>
-    </itemizedlist>
-  </para>
-  <para>You will need a checker tool. You can acquire the tool before you complete the dictionary.
-    You can ask a Python developer to make a script that returns an email or a webpage with results
-    (unallowed words used, rules as reminders on allowed words, and unknown words). Or you can
-    acquire an AI tool that integrates with your source CCMS. The important thing is that your
-    dictionary is used. It is a dynamic tool for all content creators in your organization. </para>
-  <para/>
- </article> 
->>>>>>> d08c3b3446c2949be6d64c58f68a19269314f062

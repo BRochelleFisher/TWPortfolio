@@ -19,7 +19,7 @@
   </info>
 	<orderedlist>
 		<title>These are the procedures in this project:</title>
-		<listitem><para>Collect samples.</para><para>You will create a CL from your documentation. This project creates a CL for cybersecurity from online, GPL or unlicensed content.</para></listitem>
+	  <listitem><para>Collect samples.</para><para>You will create a CL from your documentation. This project creates a CL for cybersecurity from online, GPL, or unlicensed content.</para></listitem>
 		<listitem><para>Aggregate the samples to one text file.</para></listitem>
 		<listitem><para>Run the Python script on the text file, to get a CSV file of each word and its number of instances used.</para></listitem>
 		<listitem><para>From the Python output, create the dictionary file.</para></listitem>

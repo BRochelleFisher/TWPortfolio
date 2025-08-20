@@ -25,20 +25,20 @@
    <para>Prerequisites: Run the Python script.</para>
    <para>Effort: Use the output file from the Python script to create the dictionary file. This will require approximately ten minutes.</para>
    <procedure><title>To create the dictionary file:</title>
-		<step>Import the output file to a spreadsheet.
+     <step><para>Import the output file to a spreadsheet.</para>
 			<para>We will use Google Sheets. You can use Microsoft Excel or 
 		similar.
 			</para>
 			<para>Our Python script uses a pipe ( | ) as a delimiter between the word and its frequency of use. When you import the file, set the pipe as the delimiter.
 			</para>
 		</step>
-		<step>Set the column headers.
-		<xi:include href="workWords.xml#specifictool"/>
+     <step><para>Set the column headers.</para>
+	
 		<para>If you do not have a checker tool yet, change row 1 to be these headers: <literal>Word, Count, Part of Speech, Definition, Good Example, Bad Example, Allowed?, Audience, Alt1, Alt2, Rule</literal>.</para>
 		</step>
-		<step>If there are rows between the header row and the first word, delete them.</step>
-		<step>In a separate tab, enter your audience personas in one column. Make sure <literal>all</literal> is in this list.</step>
-		<step>In the main tab, <guilabel>Audience</guilabel> column, set data validation to select the persona from the list.</step>
+     <step><para>If there are rows between the header row and the first word, delete them.</para></step>
+     <step><para>In a separate tab, enter your audience personas in one column. Make sure <literal>all</literal> is in this list.</para></step>
+     <step><para>In the main tab, <guilabel>Audience</guilabel> column, set data validation to select the persona from the list.</para></step>
 	</procedure>
 	<para>The script sorted the output by highest frequency to lowest. Start with the words most used. These will be the easiest.</para>
 </article>		

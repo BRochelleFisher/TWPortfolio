@@ -9,14 +9,14 @@
          xmlns:html="http://www.w3.org/1999/xhtml"
          xmlns:db="http://docbook.org/ns/docbook">
   <info>
-    <title>Copyright</title>
-
+    <title></title>
     <author>
       <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
     </author>
-
-    <pubdate>19 June 2025</pubdate>
+    <pubdate>June 2025</pubdate>
   </info>
-	<para>Copyright&#169; 2025 Rochelle Fisher. All Rights Resrved. Original work for private use.</para>
+	<para>Copyright&#169; 2025 Rochelle Fisher. rochelle.fisher@gmail.com All Rights Resrved. Original
+    work for private use. Content from collected samples belongs to their respective copyright
+    owners.</para>
   
 </article>

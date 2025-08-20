@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <article version="5.2" xmlns="http://docbook.org/ns/docbook" xml:id="copyright"
          xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -20,3 +21,27 @@
     owners.</para>
   
 </article>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.2" xmlns="http://docbook.org/ns/docbook" xml:id="copyright"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title></title>
+    <author>
+      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
+    </author>
+    <pubdate>June 2025</pubdate>
+  </info>
+	<para>Copyright&#169; 2025 Rochelle Fisher. rochelle.fisher@gmail.com All Rights Resrved. Original
+    work for private use. Content from collected samples belongs to their respective copyright
+    owners.</para>
+  
+</article>
+>>>>>>> d08c3b3446c2949be6d64c58f68a19269314f062

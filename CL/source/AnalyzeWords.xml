@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <article version="5.2" xmlns="http://docbook.org/ns/docbook"
          xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -225,3 +226,232 @@
 
 	</section>
 </article>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.2" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Analyzing Words</title>
+
+    <!-- <author>
+      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
+    </author> -->
+
+    <!-- <pubdate>7 July 2025</pubdate> -->
+  </info>
+
+ <section><title>Work the Next Words</title>
+ <para>You will analyze how your dictionary words are used in your sample. Begin with the top words. </para>
+ <procedure>
+	<title>To analyze words:</title>
+	<step><para>Open your aggregated sample document that you used as input for the Python script.</para></step>
+	<step><para>Search for the word to analyze. We like to use Notepad++, to get all the results in a list, each result with context.</para></step>
+	<step><para>From the context, see if the word is used in more than one part of speech. If it is, and it is not obvious which is the most common, count the instances of each PoS.
+	</para><para>I usually paste or import the results in a spreadsheet and then use COUNTIF, filter, or pivot table.</para></step>
+	<step><para>See if the word, in the allowed PoS, is used with more than one defintion. If it is, note the defitions. 
+			</para><para>Use counts, industry standards, and internet searches to get the best defintion. Get the ASD-STE 100 document and see what their dictionary says about the word. NGRAM is also a good tool.</para>
+		<para><mediaobject><imageobject><imagedata fileref="images/ngram.png" /></imageobject></mediaobject></para>
+	</step>
+	<step><para>See if the draft definition works in a large random sample, or in all uses. If you decide to make the word not allowed, see if the chosen alternate word or syntax works.  </para></step>
+	<step><para>Update the rules, definition, PoS. Enter good and bad examples.</para></step>
+	<step><para>If not allowed, make sure the words you set as alternatives are allowed and configured in the dictionary for PoS and definition, with examples.</para></step>
+ </procedure>
+ 
+ 
+ </section>
+ <section>
+	<title>Examples of Word Analysis</title>
+	<para>Let's start with <wordasword>organizational</wordasword>.</para>
+	<procedure>
+		<title>To set <wordasword>organizational</wordasword> as a word in our CL:</title>
+		<step><para>Open the file with all your textual content. We named this file <filename>sampleAgg.txt</filename>.</para></step>
+		<step><para>Search for <wordasword>organizational</wordasword>.</para>
+			<para>We found this sentence (owned by one of the organizations from which we used samples):</para>
+			<blockquote><para>Produce intelligence that will be embedded into organizational workflows and would serve decision-makers.</para></blockquote>
+		</step>
+		<step><para>Analyzing the use of <wordasword>organizational</wordasword>, 
+				we see ambiguity. Does the author mean that the workflows are organized? That they are for the organization? That there are
+				different workflows for different groups in the hierarchy?</para>
+		<para>If we remove the word, it does not change the meaning, as far as we can see. We decide that this word is not allowed. If we 
+		had access to the SME, we would discuss their meaning and find alternatives. 
+		</para>
+		<para>Suggestion: You have access to your SMEs. Set your CL words as best as you can. Then, discuss multiple words with similar issues. 
+			Edit your CL for alternative words and other decisions.</para>
+		</step>
+	</procedure>
+	<para>The next task is to work through the top words that are not obviously allowed or not allowed. Sort the dictionary by <guilabel>Count</guilabel>.
+	</para>
+	<para>Our first word to work through is <wordasword>event</wordasword>.
+	</para>
+	<procedure>
+		<title>Analyzing <wordasword>event</wordasword>:</title>
+		
+		<step><para>In Notepad++, search for <wordasword>event</wordasword> in the sample content. </para>
+			<para>We get 1417 results, for <wordasword>event</wordasword> and <wordasword>events</wordasword>.</para>
+		</step>
+		<step><para>Read the results. Make the defintion draft. For example: </para>
+				<para>a security incident detected on the secured network</para></step>
+		<step><para>Fix the defintion as you read more result lines.</para>
+			<para>For example: The fifth result is for a procedure to create an event in the security application. We learn that an event always includes
+		threat intelligence data and usage. We update the definition to:</para>
+			<blockquote><para>object that contains a cybersecurity incident, report, or finding, 
+					with attributes, identifiers, and other data for analysis, prevention, and mitigation</para></blockquote>
+		<para>We see that <wordasword>event</wordasword> is used with other definitions.</para>
+			<itemizedlist>
+				<listitem><para>A system or user action</para>
+					<para>This is a technical name for a specfic product. For our general cybersecurity dictionary, it does not fit. 
+				We can communicate actions in errors and logs with their names, without the use of <wordasword>event</wordasword>.</para>
+				</listitem>
+				<listitem><para>A phrase: "in the event this happens"</para>
+					<para>This is a verbose phrase to mean <wordasword>if</wordasword>.</para>
+				</listitem>
+				<listitem><para>CLI or API commands and pathnames. Our checker tool must ignore code, filenames, and pathnames.</para>
+					<para>This is an advantage of an XML technical writing tool. We can use 
+		elements that set content by type: &lt;code&gt;, &lt;codeblock&gt;, &lt;filename&gt;, &lt;pathname&gt;, and similar. We can then set the checker tool to ignore text in these elements. 
+		We add a rule to our style guide to use these elements.
+					</para>
+				</listitem>
+			</itemizedlist>
+		</step>
+		<step><para>Sort the dictionary by <guilabel>Word</guilabel>, to configure all similar words (plural with singular, commands, and so on).</para></step>
+		<step><para>In <wordasword>event</wordasword>, we enter the definition, good example, and bad example. In <wordasword>events</wordasword>, enter: <literal>plural of event</literal>.</para></step>
+		<step><para>A non-AI checker tool (and even some AI tools) cannot see the difference of meanings in the use of 
+				<wordasword>event</wordasword> with our specific definition or the use of the non-allowed defintion.
+				In <guilabel>Rule</guilabel>, enter: <literal>Do not use to mean action of a user or server</literal>. </para>
+			<para>Our checker tool will show rules to help writers be consistent.
+			</para>
+	</step>
+		<step><para>For the words that start with <wordasword>event</wordasword> and are obviously commands or pathnames, 
+		set the <guilabel>PoS</guilabel> to <literal>command</literal> and <guilabel>Allowed</guilabel> to <literal>T</literal>.</para>
+		<para>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="images/words_event.png" />
+				</imageobject>
+			</mediaobject>
+			
+		</para></step>
+		<step><para>In the dictionary, add a row: <literal>in the event</literal>. </para>
+			<para><guilabel>Word</guilabel> = in the event</para>
+			<para><guilabel>Count</guilabel> = added</para>
+			<para><guilabel>PoS</guilabel> = phrase</para>
+			<para><guilabel>Good Example</guilabel> = If X happens</para>
+			<para><guilabel>Bad Example</guilabel> = In the event this happens</para>
+			<para><guilabel>Allowed</guilabel> = F</para>
+			<para><guilabel>Audience</guilabel> = all</para>
+			<para><guilabel>Alt1</guilabel> = IF</para>
+	</step>
+		<step><para>Make sure that <wordasword>if</wordasword> is set to <guilabel>Allowed</guilabel> = <wordasword>T</wordasword>.
+				Search for <wordasword>if</wordasword> in the dictionary and set its values. If not in the dictionary, add it now.</para>
+			<para><guilabel>Word</guilabel> = if</para>
+			<para><guilabel>Count</guilabel> = added</para>
+			<para><guilabel>PoS</guilabel> = conjuction</para>
+			<para><guilabel>Definition</guilabel> = introduces condition</para>
+			<para><guilabel>Allowed</guilabel> = T</para>
+			<para><guilabel>Audience</guilabel> = all</para>
+		</step>
+	</procedure>
+	<procedure>
+		<title>Analyzing <wordasword>type</wordasword>:</title>
+		<para>This word is an excellent example. It is used in different parts of speech with different definitions in writing and native speaking. To control our written language,
+		we must restrict this word to one PoS and one definition. Or we can decide to set it to not allowed, to be replaced with specific words.</para>
+		<step><para>Search for <wordasword>type</wordasword> in the sample.</para></step>
+		<step><para>Skim the hits with context. If it is not clear which PoS is mostly used, enter the PoS of each row. We found that it was most often used as a noun or technical name, but there were sentences with it used as a verb.</para>
+			<para>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="images/words_type01.png" />
+					</imageobject>
+				</mediaobject>
+				
+			</para>
+		</step>
+		<step><para>Add a row for <wordasword>type</wordasword> as a verb and set it to not allowed.</para>
+			<para><guilabel>Word</guilabel> = type</para>
+			<para><guilabel>Count</guilabel> = added</para>
+			<para><guilabel>PoS</guilabel> = verb</para>
+			<para><guilabel>Good example</guilabel> = enter yes</para>
+			<para><guilabel>Bad example</guilabel> = type yes</para>
+			<para><guilabel>Allowed</guilabel> = F</para>
+			<para><guilabel>Audience</guilabel> = all</para>
+			<para><guilabel>ALT1</guilabel> = ENTER</para>
+			<para><guilabel>Rule</guilabel> = do not use as a verb</para>
+		</step>
+		<step><para>Make sure <wordasword>enter</wordasword> is allowed.</para>
+	
+			<para><guilabel>Word</guilabel> = enter</para>
+			<para><guilabel>PoS</guilabel> = verb</para>
+			<para><guilabel>Definition</guilabel> = input values</para>
+			<para><guilabel>Good example</guilabel> = enter yes</para>
+			<para><guilabel>Bad example</guilabel> = type yes</para>
+			<para><guilabel>Allowed</guilabel> = T</para>
+			<para><guilabel>Audience</guilabel> = all</para></step>
+		<step><para>We see that there many uses of <wordasword>type</wordasword> in the GUI and CLI. We could try to make it a technical name for user interface (UX) creators. The word <wordasword>type</wordasword> would be allowed in
+				microcopy and coding but not in technical writing.</para> 
+			<para>
+				<mediaobject>
+					<imageobject>
+				<imagedata fileref="images/words_type03.png" />
+					</imageobject>
+				</mediaobject>		
+			</para>
+			<para>But we see in the results that <wordasword>type</wordasword> is used in text that cannot easily be rewritten. We must allow it for everyone, but only with the required definition, as an object in the product.</para>
+			<para><guilabel>Word</guilabel> = type</para>
+			<para><guilabel>PoS</guilabel> = name</para>
+			<para><guilabel>Definition</guilabel> = product group of objects with common characteristics</para>
+			<para><guilabel>Allowed</guilabel> = T</para>
+			<para><guilabel>Audience</guilabel> = All</para>
+			<para><guilabel>Rule</guilabel> = only as product object - rewrite if meant general</para>
+		</step>
+		<step><para>Make sure the style guide rule that all text on the interface (GUI, API, or CLI) must be wrapped in an element, such as &lt;code&gt;, &lt;codeblock&gt;, &lt;guilable&gt;. 
+		We can then set the checker tool to ignore text in these elements. 
+		If your checker tool shows the rules, it will not show this rule for interface labels, where it would cause user fatigue and be ignored when it is necessary.</para></step>
+		<step><para>We look through the uses of <wordasword>type</wordasword> to mean a general group of people or things having common characteristics. We can rewrite those. 
+		</para>
+			<itemizedlist>
+				<listitem>
+					<para>Given the text: 
+						<blockquote><para>supports various relationship types, and their usage depends on the entity types being linked</para></blockquote>
+					</para>
+					<para>This one sentence uses <wordasword>type</wordasword> with two definitions. The first can be removed. The second 
+						fits the allowed defition.</para>
+					<para>Controlled version: <literal>supports various relationships, and their usage requires linked entity types</literal> </para>
+				</listitem>
+				<listitem>
+					<para>Given the text: <blockquote><para>there are two types of admins: Org Admins and Site Admins</para></blockquote>
+					</para>
+					<para>The use of <wordasword>type</wordasword> is not required. 
+						If the SME does not like <wordasword>level</wordasword>, we can change it to a different word
+						(<wordasword>set</wordasword>, <wordasword>permissions</wordasword>). 
+						Also note that we remove <wordasword>two</wordasword>. 
+						It is always best to not enumerate features, to make sure you do not create a conflict in the text when a new feature is added.</para>
+					<para>Controlled version: <literal>there are different admin levels: Org Admins and Site Admins</literal>
+					</para>
+				</listitem><listitem>
+					<para>Given the text: <blockquote><para>the type of storage used by Product can have an impact</para></blockquote>
+					</para>
+					<para>The full text discussed SSD devices and feed caching technology. We guess that "type" meant hardware and configuration.</para>
+					<para>Controlled version: <literal>The storage you use can have an impact.</literal> OR 
+						<literal>your storage hardware and algorithm can impact Product</literal> OR
+						<literal>storage hardware can impact Product</literal>
+					</para>
+				</listitem>
+			</itemizedlist>
+		</step>
+	</procedure>
+ 	
+	
+			
+				
+ 	
+
+	</section>
+</article>
+>>>>>>> d08c3b3446c2949be6d64c58f68a19269314f062

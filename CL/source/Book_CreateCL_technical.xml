@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <book xmlns="http://docbook.org/ns/docbook"
       xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -50,3 +51,57 @@
 	<xi:include href="AnalyzeWords.xml"/>
 	<xi:include href="Conclusion.xml"/>
 </book>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      version="5.0">
+    <info>
+        <title>Creating Your Controlled Language</title>
+        <subtitle>User Guide</subtitle>
+        <cover><mediaobject>
+            <imageobject>
+                <imagedata fileref="images/rochelleFisherLogo.png"/>
+            </imageobject>
+        </mediaobject></cover>
+        <pubdate>31 July 2025</pubdate>
+        
+       <author>
+            <personname>Rochelle Fisher</personname>
+        </author>
+	
+        <legalnotice>
+            <para>Copyright&#169; 2025 Rochelle Fisher. rochelle.fisher@gmail.com All Rights Resrved. Original
+            work for private use. Content from collected samples belongs to their respective copyright
+            owners.</para>
+            <itemizedlist>
+      		<title>Sample Sources:</title>
+      		<listitem><para>Rubicon Communications LLC. (Apr 25, 2025) netgate&#169; Security Gateway Manual: Amazon AWS. &#169; Copyright 2025 Rubicon Communications LLC. https://docs.netgate.com/manuals/pfsense/en/latest/aws-vpn-appliance-security-gateway-manual.pdf</para></listitem>
+      		<listitem><para>OpenCTI. (2025) OpenCTI User Guide: Manual Creations. &#169; 2025 Filigran. All rights reserved. https://docs.opencti.io/latest/usage/manual-creation/</para></listitem>
+      		<listitem><para>MISP. (2024) MISP User Guide: A Threat Sharing Platform. GPL and CC-BY-SA 4.0 international.</para></listitem>
+    	   </itemizedlist>
+        </legalnotice>
+        <abstract>
+            <para>This version of the documentation is for technical writers or developers who have Python installed, can run the scripts given in this 
+            document, and can continue with the linguistic analysis to create a proprietary controlled language.</para>
+        </abstract>    
+        <revhistory>
+            <revision>
+                <date>30 July 2025</date>
+                <authorinitials>RF</authorinitials>
+                <revdescription><para>pre-release; working on PDF transformation output</para></revdescription>
+            </revision>
+        </revhistory>
+        
+    </info>
+         
+	<xi:include href="IntroTech.xml"/>
+    <xi:include href="workflow.xml"></xi:include>
+    <xi:include href="collectSamples.xml"/>
+	<xi:include href="RunPython.xml"/>
+    <!-- <xi:include href="CreateDictionaryFile.xml"/> -->
+    <xi:include href="workWords.xml"/>
+	<xi:include href="AnalyzeWords.xml"/>
+	<xi:include href="Conclusion.xml"/>
+</book>
+>>>>>>> d08c3b3446c2949be6d64c58f68a19269314f062

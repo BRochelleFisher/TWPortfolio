@@ -73,21 +73,22 @@
       <para>In general terms, a taxonomy is a structured CL, with parents and
       children. For example, in biology the taxonomy has: class -> order -> family -> genus -> species.</para>
 
-      <para>In technical writing, the taxonomy is usually for different
-      audiences of a product, from marketing to technical: all > C-level decision maker > user -> advanced
-      user -> system administrator. There will be a default CL,
-      with all the rules that apply to all audiences, and a dictionary for
-      each persona. For example, a taxonomy for a decision maker will be used
-      mainly by Marketing and will allow the word
-      <wordasword>leverage</wordasword> with the meaning "to use a foundation
-      feature to reach the solution for which the product exists". For all other audiences, the word <wordasword>leverage
-      </wordasword> is not allowed, and its alternative is
-      <wordasword>use</wordasword>.</para>
+      <para>In technical writing, the taxonomy is usually for different audiences of a product, from
+        marketing to technical: all > C-level decision maker > user > advanced user > system
+        administrator. There will be a default CL, with all the rules that apply to all audiences,
+        and a dictionary for each persona. For example, a taxonomy for a decision maker will be used
+        mainly by Marketing and will allow the word <wordasword>leverage</wordasword> with the
+        meaning "to use a foundation feature to reach the solution for which the product exists".
+        For all other audiences, the word <wordasword>leverage </wordasword> is not allowed, and its
+        alternative is <wordasword>use</wordasword>.</para>
 
-      <para>A Taxonomy Manager for a company that creates a shopping app for
-      Smart Phones will be in charge of labeling strategies for search results. A Taxonomy Manager for a cybersecurity company will create a CL for different audiences and use a
-      tool to enforce it. To keep things simple in this guide, we will not use the word
-      <wordasword>taxonomy</wordasword>. We will use the word <wordasword>CL</wordasword> (Controlled Language) for the default vocabulary and the rule set, or <wordasword>dictionary</wordasword> for a subset of the CL for a specific audience. </para>
+      <para>A Taxonomy Manager for a company that creates a shopping app for Smart Phones will be in
+        charge of labeling strategies for search results. A Taxonomy Manager for a cybersecurity
+        company will create a CL for different audiences and use a tool to enforce it. </para>
+      <para>This project is for one dictionary. To keep things simple in this guide, we will not use
+        the word <wordasword>taxonomy</wordasword>. We will use the word <wordasword>CL</wordasword>
+        (Controlled Language) for the default vocabulary and the rule set, or
+          <wordasword>dictionary</wordasword> for the vocabulary alone.</para>
     </section>
 
     
@@ -98,7 +99,10 @@
 
     <para>This is a personal project of Rochelle Fisher, August 2025. The goal is to make a sample
       of technical writing and a sample of a proprietary CL for cybersecurity.</para>
-
+  </section>
+  
+  <section>
+    <title>Project Reference</title>
     <para>If you use part, parts, or all of this project for personal use, for
     profit, or for an organization (non-profit or for-profit), please
     include a reference to this project or its documentation. </para>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.2" xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:trans="http://docbook.org/ns/transclusion"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:m="http://www.w3.org/1998/Math/MathML"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:db="http://docbook.org/ns/docbook">
+    <info>
+        <title>Control Your Product Documentation</title>
+        <subtitle>What is a Controlled Language and Why do you need it?</subtitle>
+       
+        <abstract>
+            <para>This version of the documentation is for decision makers, concerned with documentation quality and translation costs.</para>
+        </abstract>
+       
+      
+    </info>
+    
+    <section>
+        <title>What is a Controlled Language?</title>
+        
+        <para>A Controlled Language (CL) is set of rules for grammar, sentence
+            length, and vocabulary. The rules define words and grammar as allowed or not allowed. 
+            This enforces consistency for all your documentation and
+            conforms to or builds an industry standard for your products.</para>
+        <section>
+            <title>Benefits of a CL</title>
+            
+            <para>Adopting and enforcing a CL is the solution to many technical
+                writing issues.</para>
+            
+            <itemizedlist>
+                <listitem>
+                    <para>For a team of writers, the CL enforces
+                        consistency of the content among the writers. If you have one
+                        writer, the CL enforces consistency over time among the
+                        documents.</para>
+                </listitem>
+                
+                <listitem>
+                    <para>If you translate your content, the reduced vocabulary and
+                        grammar, and the re-use of matching content, makes translation
+                        significantly cheaper and often of better quality.</para>
+                </listitem>
+                
+                <listitem>
+                    <para>For a product with a global market but without a budget for
+                        translation, the CL makes it easier for non-native speakers to read
+                        and use your documentation correctly. If your documentation is
+                        online, built-in machine translation (such as Google Translate) will
+                        give better results.</para>
+                </listitem>
+                
+                <listitem>
+                    <para>With writer buy-in of the 
+                        CL and re-use strategy, productivity will increase.</para>
+                </listitem>
+                
+                <listitem>
+                    <para>Reduce your content by at least 30% without loss
+                        of information. Concise documentation makes it easier for users to
+                        find what is relevant to them at the time, makes clear to
+                        reviewers and stake-holders what is not relevant or incorrect, and
+                        makes the documented steps easier to follow.</para>
+                </listitem>
+            </itemizedlist>
+        </section>
+        <section>
+            <title>CL or Taxonomy?</title>
+            
+            <para>In general terms, a taxonomy is a structured CL, with parents and
+                children. For example, in biology the taxonomy has: class -> order -> family -> genus -> species.</para>
+            
+            <para>In technical writing, the taxonomy is usually for different audiences of a product, from
+                marketing to technical: all > C-level decision maker > user > advanced user > system
+                administrator. There will be a default CL, with all the rules that apply to all audiences,
+                and a dictionary for each persona. For example, a taxonomy for a decision maker will be used
+                mainly by Marketing and will allow the word <wordasword>leverage</wordasword> with the
+                meaning "to use a foundation feature to reach the solution for which the product exists".
+                For all other audiences, the word <wordasword>leverage </wordasword> is not allowed, and its
+                alternative is <wordasword>use</wordasword>.</para>
+            
+            <para>A Taxonomy Manager for a company that creates a shopping app for Smart Phones will be in
+                charge of labeling strategies for search results. A Taxonomy Manager for a cybersecurity
+                company will create a CL for different audiences and use a tool to enforce it. </para>
+            <para>This project is for one dictionary. To keep things simple in this guide, we will not use
+                the word <wordasword>taxonomy</wordasword>. We will use the word <wordasword>CL</wordasword>
+                (Controlled Language) for the default vocabulary and the rule set, or
+                <wordasword>dictionary</wordasword> for the vocabulary alone.</para>
+        </section>
+        
+        
+    </section>
+    
+    <section>
+        <title>Scope of Project</title>
+        
+        <para>This is a personal project of Rochelle Fisher, August 2025. The goal is to make a sample
+            of technical writing and a sample of a proprietary CL for cybersecurity.</para>
+        <para>Copyright&#169;2025 Rochelle Fisher. rochelle.fisher@gmail.com All Rights
+            Reserved.
+         
+        </para>
+    </section>
+    
+    <section>
+        <title>Project Tasks</title>
+        <section>
+            <title>Task: Communicate</title>
+            <para>It is important that you communicate the purpose of the project to the technical writers. In the beginnig
+            all of the benefits are for the user. With time, it make the work of the writers easier and faster.</para>
+            <para>Expected Output: Buy-in from the technical writers to be motivated to create the CL, to use it daily, to learn the rules, and to maintain changes as required.</para>  
+       
+        <para>Owner: Manager of Technical Writers or higher</para>
+        <para>Est. Effort: 1 - 5 hrs</para>
+         </section>
+        <section>
+            <title>Task: Collect Documentation</title>
+            <para>Get the documentation that you have for one or more products. Save it all as one file, in txt format. </para>
+            <para>Expected Output: One aggregate text file of all documentation of a product</para>  
+       
+        <para>Owner: Technical Writer</para>
+        <para>Est. Effort: 5 - 9 hrs</para>
+         </section>
+        <section>
+            <title>Task: Create Dictionary File</title>
+            <para>A developer or technical writer will run a set of Python scripts on the aggregate file. They will push the results
+            to a spreadsheet and change it for specific column headings and valid data.</para>
+            <para>Expected Output: Spreadsheet with all unique words, the count of each word in your documentation, and columns for linguistic analysis</para>  
+       
+        <para>Owner: Developer (possible tech writer with Python experience)</para>
+        <para>Est. Effort: 1 - 4 hrs</para>
+         </section>
+        <section>
+            <title>Task: Acquire or develop checker tool</title>
+            <para>Your technical writer researches the features and cost of tools, such as Writer and Jasper. If the cost is out of 
+                your budget for documentation, you will require the time and services of a developer. The technical writer should manage
+                the developer's requirements and expected output.</para>
+            <para>The tech writer can begin working the Dictionary before the tool is acquired or created. If you acquire a tool before the writer begins,
+                it may save some days that might be required to change the Dictionary structure to import properly to the tool.</para>
+            <para>Expected Output: A tool that will tell writers when they do not conform with the Dictionary, replacement words or content to rewrite, and 
+                rules that explain why. Most often, if you develop a tool in-house, it will not integrate with the authoring tool. Writers will 
+                get results only after they wrote a topic or book. If you acquire a tool, make sure it integrates with your authoring tool,
+                for on-the-fly checks and fast rewrites.</para>  
+      
+        <para>Owner: Technical Writer / Decision-Maker</para>
+        
+        <para>Est. Effort: Depends on solution</para>
+        
+          </section>
+        <section>
+            <title>Task: Create Vocabulary Values in Dictionary File</title>
+            <para>Technical writers analyze each unique word, in the spreadsheet or acquired tool. They set words and phrases as allowed or not allowed,
+            create or update specific definitions, make sure there is one word for each definition and that each word has one meaning and 
+            one part of speech. They will add good and bad examples, rules for usage, and alternative allowed words for words that are not allowed.</para>
+            <para>Expected Output: A complete vocabulary to help writers remain consistent and to make sure content is controlled.</para>  
+       
+        <para>Owner: Technical Writer</para>
+        
+            <para>Est. Effort: 20 words/hour.   For a Dictionary with 10K - 50K words, and tech writers who work on it as a side project, plan for one work-year.</para>
+        </section>
+     
+    </section>
+    
+  
+</article>

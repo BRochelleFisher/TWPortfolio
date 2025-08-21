@@ -3,8 +3,8 @@
     xmlns:xi="http://www.w3.org/2001/XInclude"
     version="5.0">
     <info>
-        <title>Creating Your Controlled Language</title>
-        <subtitle>Developer and Analyst Guide</subtitle>
+        <title>Simplifying Cybersecurity Documentation with a Proprietary Controlled Language</title>
+        <subtitle>Analyst Guide</subtitle>
         <cover>
             <mediaobject>
                 <imageobject>
@@ -39,35 +39,24 @@
             </itemizedlist>
         </legalnotice>
         <abstract>
-            <para>This version of the documentation is for technical writers or developers who have
-                Python installed, can run the scripts given in this document, and can continue with
-                the linguistic analysis to create a proprietary controlled language.</para>
+            <para>This version of the documentation is for technical writers or linguistic analysts. It assumes someone else 
+                ran the scripts that created your Dictionary. Your task is to work the words, making your Controlled Language dictionary.</para>
         </abstract>
         <revhistory>
             <revision>
                 <date>20 August 2025</date>
                 <authorinitials>RF</authorinitials>
                 <revdescription>
-                    <para>pre-release; adding docs of scripts</para>
+                    <para>pre-release</para>
                 </revdescription>
             </revision>
-            <revision>
-                <date>30 July 2025</date>
-                <authorinitials>RF</authorinitials>
-                <revdescription>
-                    <para>pre-release; working on PDF transformation output</para>
-                </revdescription>
-            </revision>
+            
         </revhistory>
     </info>
     
-    <xi:include href="IntroTech.xml"/>
-    <xi:include href="workflow.xml" />
-    <xi:include href="collectSamples.xml"/>
-    <xi:include href="RunPython.xml"/>
-    <xi:include href="addDefFromAPI.xml"/>
-    <xi:include href="provideContext.xml"/>
-    <!--   <xi:include href="CreateDictionaryFile.xml"/> -->
+    <xi:include href="CreatingCL01.xml"/>
+    <xi:include href="workflowNonTech.xml" />
+   
     <xi:include href="workWords.xml"/>
     <xi:include href="AnalyzeWords.xml"/>
     <xi:include href="Conclusion.xml"/>

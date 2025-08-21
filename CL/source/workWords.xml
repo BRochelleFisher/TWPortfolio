@@ -20,7 +20,7 @@
 
  <section><title>Work the First Words</title>
    <para>The first words that you set up in your dictionary will be the easiest and will have the most impact. </para>
-   <para>Prerequisites: Have the dictionary file in a spreadsheet.</para>
+   <para>Prerequisites: Have the dictionary file in a spreadsheet. Make sure it is sorted for COUNT.</para>
    <para>Effort: This will require less than an hour.</para>
    <procedure><title>To work through the most used words in your dictionary:</title>
 		
@@ -46,76 +46,156 @@
   </section>
   <section>
 	<title>Examples of the First Words</title>
-	  <itemizedlist>
-	  <listitem>
-		<para>In our example, one of the product or company names is the word with the highest frequency. We set its PoS as <literal>Name</literal> and set <guilabel>Allowed</guilabel> to <literal>T</literal>.
-		We set <guilabel>Audience</guilabel> to <literal>all</literal>. We do not set a value for the other columns yet.</para>
-	  	<para>
-	  		<mediaobject>
-	  			<imageobject>
-	  				<imagedata fileref="images/words01.png" />
-	  			</imageobject>
-	  		</mediaobject>
-	  	</para>
-	
-	</listitem>
-	<listitem><para>
+  	<para>In our example,
+  		one of the product
+  		or company names
+  		is the word with the
+  		highest frequency. This should be your most used word too.</para>
+  	<table>
+  		<title>The Most Used Word</title>
+  		<tgroup cols="5">
+  			<thead>
+  				<row>
+  					<entry>Word</entry>
+  					
+  					<entry>PoS</entry>
+  					<entry>Definition</entry>
+  					<entry>Allowed?</entry>
+  					<entry>Audience</entry>
+  					<!--<entry>ALT</entry>-->
+  				</row>
+  			</thead>
+  			<tbody>
+  				<row>
+  					<entry><emphasis>company or product name</emphasis></entry>
+  					<entry><literal>Name</literal></entry>
+  					<entry><emphasis>Add your marketing definition.</emphasis></entry>
+  					
+  					<entry><literal>T</literal></entry>
+  					<entry><literal>all</literal></entry>
+  				</row>
+  			</tbody>
+  		</tgroup>
+  	</table>
+	<para>
 			In the top words, we have many that are clearly to be allowed: <wordasword>this that will with from your</wordasword>. These are pronouns, prepositions, and modular verbs. 
 			In a technical writing dictionary for native speakers, it does not give a lot of information to define the PoS. Is <wordasword>that</wordasword> a pronoun, adverb, conjunction, or determiner? 
-			We set a rule that we do not use minimalist rules. 
+		Enter any reasonable value for the PoS. </para><para>
+			In our style guide, we set a rule that we do not use minimalist rules. 
 			If <wordasword>that</wordasword> helps make a sentence easier to understand, we use it. 
 			</para>
-		<para>
-			<mediaobject>
-				<imageobject>
-					<imagedata fileref="images/words02.png" />
-				</imageobject>
-			</mediaobject>
-		</para>
+  	<table>
+  		<title>Most Used Words</title>
+  		<tgroup cols="6">
+  			<thead>
+  				<row>
+  					<entry>Word</entry>
+  					<entry>Count</entry>
+  					<entry>PoS</entry>
+  					<entry>Definition</entry>
+  					<entry>Allowed?</entry>
+  					<entry>Audience</entry>
+  				</row>
+  			</thead>
+  			<tbody>
+  				<row>
+  					<entry><literal>this</literal></entry>
+  					<entry><literal>730</literal></entry>
+  					<entry><literal>pronoun</literal></entry>
+  					<entry><emphasis>blank</emphasis></entry>
+  					<entry><literal>T</literal></entry>
+  					<entry><literal>all</literal></entry>
+  				</row>
+  				<row>
+  					<entry><literal>that</literal></entry>
+  					<entry><literal>706</literal></entry>
+  					<entry><literal>pronoun</literal></entry>
+  					<entry><emphasis>blank</emphasis></entry>
+  					<entry><literal>T</literal></entry>
+  					<entry><literal>all</literal></entry>
+  				</row>
+  				<row>
+  					<entry><literal>will</literal></entry>
+  					<entry><literal>667</literal></entry>
+  					<entry><literal>verb</literal></entry>
+  					<entry><emphasis>sets future tense of main verb (we defined this word to differentiate from its other definitions)</emphasis></entry>
+  					<entry><literal>T</literal></entry>
+  					<entry><literal>all</literal></entry>
+  				</row>
+  				<row>
+  					<entry><literal>with</literal></entry>
+  					<entry><literal>612</literal></entry>
+  					<entry><literal>preposition</literal></entry>
+  					<entry><emphasis>blank</emphasis></entry>
+  					<entry><literal>T</literal></entry>
+  					<entry><literal>all</literal></entry>
+  				</row>
+  				<row>
+  					<entry><literal>from</literal></entry>
+  					<entry><literal>501</literal></entry>
+  					<entry><literal>preposition</literal></entry>
+  					<entry><emphasis>blank</emphasis></entry>
+  					<entry><literal>T</literal></entry>
+  					<entry><literal>all</literal></entry>
+  				</row>
+  				<row>
+  					<entry><literal>your</literal></entry>
+  					<entry><literal>376</literal></entry>
+  					<entry><literal>pronoun</literal></entry>
+  					<entry><emphasis>blank</emphasis></entry>
+  					<entry><literal>T</literal></entry>
+  					<entry><literal>all</literal></entry>
+  				</row>
+  			
+  			</tbody>
+  		</tgroup>
+  	</table>
 		
-	</listitem>
-	<listitem><para>We have words that are industry standard for software technical writing: <wordasword>
+	
+<para>We have words that are industry standard for software technical writing: <wordasword>
 			introduction
 user
 data
 attributes
 attribute
 example
-organisation</wordasword>. 
-			Later, we will enter a specific definition for these words. For now, we set the <guilabel>PoS</guilabel>, 
-			set <guilabel>Allowed</guilabel> to <literal>T</literal>, and set <guilabel>Audience</guilabel> to <literal>all</literal>.</para>
-			<para><wordasword>attribute</wordasword> and <wordasword>attributes</wordasword> are two items. </para>
-		<para>
-			We restrict the values of the <guilabel>Word</guilabel> and <guilabel>ALT</guilabel>
-			columns to one word or phrase, to prepare for a checker tool that might be a simple Python script.</para>
+organisation</wordasword>. </para>
+	<itemizedlist>
+		<listitem>
+			<para>We set the <guilabel>PoS</guilabel> and <guilabel>Definition</guilabel> for our words. We
+			set <guilabel>Allowed</guilabel> to <literal>T</literal> and <guilabel>Audience</guilabel> to <literal>all</literal>.</para>
+		</listitem>
+		<listitem>
+			<para>Notice that <wordasword>attribute</wordasword> and <wordasword>attributes</wordasword> are two items. </para>
+			<para>
+				We restrict the values of the <guilabel>Word</guilabel> and <guilabel>ALT</guilabel>
+				columns to one word or phrase, to prepare for a checker tool that might be a simple Python script. This is 
+			different from the way ASD-STE is written, but if you begin with this restriction, it will be easier later.</para>
 			<para>If you know that you will use a specific AI-driven tool, such as writer.com or jasper.ai, change the dictionary 
 				headers and values to work with the acquired tool.</para>
-		
-			</listitem>
-		<listitem><para>See <wordasword>organisation</wordasword>. We know we need this word, but this spelling is British. We know our rules will tell us to use American spelling. In this case, we will make a decision for our dictionary without
-			analysis, or to put it more accurately, despite analysis. The spelling of <wordasword>organisation</wordasword> is the most commonly used form, but we will not use it. We will use the American spelling.</para>
-			</listitem>
-		</itemizedlist>		
-  	<procedure>
-					<step><para>Sort the complete range of dictionary alphabetically, by <wordasword>Word</wordasword>.</para></step>
-					<step><para>Set <wordasword>organization</wordasword> and <wordasword>organizations</wordasword> as allowed (<literal>T</literal> in <guilabel>Allowed</guilabel>).</para></step>
-					<step><para>Set the British <wordasword>organisation</wordasword> and <wordasword>organisations</wordasword> as not allowed (<literal>F</literal> in <guilabel>Allowed</guilabel>).</para></step>
-					<step><para>In the allowed words, set the definition: <literal>nonspecific body of people with a purpose</literal>.</para><para>We will use <wordasword>organisation</wordasword> for a 
-					company, nonprofit org, military base, and all similar bodies.</para></step>
-					<step><para>In ALT1 for <wordasword>organisation</wordasword> and <wordasword>organisations</wordasword>, enter <wordasword>organization</wordasword> and <wordasword>organizations</wordasword>.</para></step>
-				</procedure>
-				<para>
-					<mediaobject>
-						<imageobject>
-							<imagedata fileref="images/words03.png" />
-						</imageobject>
-					</mediaobject>
-				</para>
+		</listitem>
+		<listitem>
+			<para>See <wordasword>organisation</wordasword>. We know we need this word, but this spelling is British. We know our rules will tell us to use American spelling. In this case, we will make a decision for our dictionary without
+				analysis, or to put it more accurately, despite analysis. The spelling of <wordasword>organisation</wordasword> is the most commonly used form, but we will not use it. We will use the American spelling.</para>
+			<procedure>
+				<step><para>Sort the complete range of dictionary alphabetically, by <wordasword>Word</wordasword>.</para></step>
+				<step><para>Set <wordasword>organization</wordasword> and <wordasword>organizations</wordasword> as allowed (<literal>T</literal> in <guilabel>Allowed</guilabel>).</para></step>
+				<step><para>Set the British <wordasword>organisation</wordasword> and <wordasword>organisations</wordasword> as not allowed (<literal>F</literal> in <guilabel>Allowed</guilabel>).</para></step>
+				<step><para>In the allowed words, set the definition: <literal>nonspecific body of people with a purpose</literal>.</para><para>We will use <wordasword>organization</wordasword> for a 
+						company, nonprofit org, military base, and all similar bodies.</para></step>
+				<step><para>In ALT1 for <wordasword>organisation</wordasword> and <wordasword>organisations</wordasword>, enter <wordasword>organization</wordasword> and <wordasword>organizations</wordasword>.</para></step>
+			</procedure>
+			<para>When we sorted by Word to see all the issues of <wordasword>organi*</wordasword>, we saw <wordasword>organizational</wordasword>, with a COUNT of <literal>1</literal>. 
+				Why not add <wordasword>organizational</wordasword> on the fly? 
+				Answer: It is used only one time. We will analyze the text and find a more common rewrite in that one sentence. 
+				Or maybe that one instance is for <wordasword>Organizational Unit (OU)</wordasword> in Active Directory. 
+				If so, we will make that phrase a "word".</para>
+		</listitem>
+	</itemizedlist>
 			
-			<para>Why not add <wordasword>organizational</wordasword> on the fly? Answer: It is used only one time. We will analyze the text and find a more common rewrite in that one sentence. Or maybe that one 
-			instance is for <wordasword>Organizational Unit (OU)</wordasword> in Active Directory. If so, we will make that phrase a "word".</para>
-		
-	  <para>Sort the range by Count. We are done with the easiest words. Next: analyze words in their syntax and by content to make decisions for the dictionary.</para>
+<para>NEXT:  When you are done with the most used words that you want to complete now (best practice: stop after an hour), sort the range by Count.
+	We will analyze the words that are most likely to be NOT allowed: words used only one time. After that, go through the words in 
+the order that best works for you.</para>
 
   </section>
 </article>

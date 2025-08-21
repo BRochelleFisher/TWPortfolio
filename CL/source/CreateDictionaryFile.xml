@@ -40,5 +40,5 @@
      <step><para>In a separate tab, enter your audience personas in one column. Make sure <literal>all</literal> is in this list.</para></step>
      <step><para>In the main tab, <guilabel>Audience</guilabel> column, set data validation to select the persona from the list.</para></step>
 	</procedure>
-	<para>The script sorted the output by highest frequency to lowest. Start with the words most used. These will be the easiest.</para>
+	<!--<para>The script sorted the output by highest frequency to lowest. Start with the words most used. These will be the easiest.</para>-->
 </article>		

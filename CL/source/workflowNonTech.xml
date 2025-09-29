@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <article version="5.2" xmlns="http://docbook.org/ns/docbook"
          xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -31,3 +32,38 @@
 	</orderedlist>
  
  </article> 
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.2" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Workflow</title>
+
+   <!--  <author>
+      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
+    </author> 
+
+    <pubdate>19 June 2025</pubdate>-->
+  </info>
+	<orderedlist>
+		<title>These are the procedures in this project:</title>
+	  <listitem><para>Collect your documentation. Save all the files together in one aggregate text file. Send this
+        file to your Python developer.</para><para>You will create a CL from your documentation. This project creates a CL for cybersecurity from online, GPL, or unlicensed content.</para></listitem>
+		<listitem>
+      <para>Get the Dictionary file.</para>
+    </listitem>
+		<listitem><para>For each word, analyze usage for the one definition, one part of speech, allowed or not allowed, audience, and examples.</para></listitem>
+		<listitem><para>Out of scope:  Create grammar and content rules. Start with ASD-STE 100 rules and then
+        customize as you require.</para></listitem>
+		<listitem><para>Out of scope: Select an AI tool, or create a Python script, to test content for CL conformance (we like writer.com).</para></listitem>
+	</orderedlist>
+ 
+ </article> 
+>>>>>>> 10728bbeda71baf15d8970f6e1e88c1c9dcc5f59

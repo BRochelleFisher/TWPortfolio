@@ -1,0 +1,523 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+			<title xmlns:ng="http://docbook.org/docbook-ng">Examples of Word Analysis</title>
+			<meta xmlns:ng="http://docbook.org/docbook-ng" name="generator" content="DocBook XSL Stylesheets V1.79.2">
+				<link rel="home" href="index.html" title="Creating Your Controlled Language">
+					<link rel="up" href="ar08.html" title="Analyzing Words">
+						<link rel="prev" href="ar08.html" title="Analyzing Words">
+							<link rel="next" href="ar09.html" title="What Now?"/>
+	</head>
+	<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+								<div class="navheader">
+									<table width="100%" summary="Navigation header">
+										<tr>
+											<th colspan="3" align="center">Examples of Word Analysis</th>
+										</tr>
+										<tr>
+											<td width="20%" align="left">
+												<a accesskey="p" href="ar08.html">Prev</a>&nbsp;</td>
+											<th width="60%" align="center">Analyzing Words</th>
+											<td width="20%" align="right">&nbsp;<a accesskey="n" href="ar09.html">Next</a>
+											</td>
+										</tr>
+									</table>
+									<hr/>
+									<div class="section">
+										<div class="titlepage">
+											<div>
+												<div>
+													<h2 class="title" style="clear: both">
+														<a name="d5e416"/>Examples of Word Analysis</h2>
+												</div>
+											</div>
+										</div>
+										<p>Let's start with <em class="wordasword">organizational</em>.</p>
+										<div class="procedure">
+											<a name="d5e420"/>
+											<p class="title">
+												<b>Procedure&nbsp;5.&nbsp;To set <em class="wordasword">organizational</em> as a word in our CL:</b>
+											</p>
+											<ol class="procedure" type="1">
+												<li class="step">
+													<p>Open the file with all your textual content. We named this file <code class="filename">sampleAgg.txt</code>.</p>
+												</li>
+												<li class="step">
+													<p>Search for <em class="wordasword">organizational</em>.</p>
+													<p>We found this sentence (owned by one of the organizations from which we used samples):</p>
+													
+														<em style="color:red">
+															<p>Produce intelligence that will be embedded into organizational workflows and would serve decision-makers.</p></em>
+														
+													
+												</li>
+												<li class="step">
+													<p>Analyzing the use of <em class="wordasword">organizational</em>, 
+				we see ambiguity. Does the author mean that the workflows are organized? That they are for the organization? That there are
+				different workflows for different groups in the hierarchy?</p>
+													<p>If we remove the word, it does not change the meaning, as far as we can see. We decide that this word is not allowed. If we 
+		had access to the SME, we would discuss their meaning and find alternatives. 
+		</p>
+													<p>Suggestion: You have access to your SMEs. Set your CL words as best as you can. Then, discuss multiple words with similar issues. 
+			Edit your CL for alternative words and other decisions.</p>
+												</li>
+											</ol>
+										</div>
+										<p>The next task is to work through the top words that are not obviously allowed or not allowed. Sort the dictionary by <span class="guilabel">Count</span>.
+	</p>
+										<p>Our next word to work through is <em class="wordasword">event</em>.
+	</p>
+										<div class="procedure">
+											<a name="d5e441"/>
+											<p class="title">
+												<b>Procedure&nbsp;6.&nbsp;Analyzing <em class="wordasword">event</em>:</b>
+											</p>
+											<ol class="procedure" type="1">
+												<li class="step">
+													<p>Search for <em class="wordasword">event</em> in the sample content or context file. </p>
+													<p>Our sample has 1417 results, for <em class="wordasword">event</em> and <em class="wordasword">events</em>.</p>
+												</li>
+												<li class="step">
+													<p>Read the results. Make the definition draft. For example: </p>
+													<p>
+														<code class="literal">a security incident detected on the secured network</code>
+													</p>
+												</li>
+												<li class="step">
+													<p>Fix the definition as you read more result lines.</p>
+													<p>For example, the fifth result is for a procedure to create an event in the security application. We learn that an event always includes
+		threat intelligence data and usage. We update the definition to:</p>
+													<div class="blockquote">
+														<code class="literal"
+															<p>object that contains a cybersecurity incident, report, or finding, 
+					with attributes, identifiers, and other data for analysis, prevention, and mitigation</p>
+														</code>
+													</div>
+													<p>We see that <em class="wordasword">event</em> is used with other definitions.</p>
+													<div class="itemizedlist">
+														<ul class="itemizedlist" style="list-style-type: disc; ">
+															<li class="listitem">
+																<p>A system or user action</p>
+																<p>This is a technical name for a specific product. For our general cybersecurity dictionary, it does not fit. 
+				We can communicate actions in errors and logs with their names, without the use of <em class="wordasword">event</em>.</p>
+															</li>
+															<li class="listitem">
+																<p>A phrase: "in the event this happens"</p>
+																<p>This is a verbose phrase to mean <em class="wordasword">if</em>.</p>
+															</li>
+															<li class="listitem">
+																<p>CLI or API commands and pathnames. Our checker tool must ignore code, filenames, and pathnames.</p>
+																<p>This is an advantage of an XML technical writing tool. We can use 
+		elements that set content by type: &lt;code&gt;, &lt;codeblock&gt;, &lt;filename&gt;, &lt;pathname&gt;, and similar. We can then set the checker tool to ignore text in these elements. 
+		We add a rule to our style guide to use these elements.
+					</p>
+															</li>
+														</ul>
+													</div>
+												</li>
+												<li class="step">
+													<p>Sort the dictionary by <span class="guilabel">Word</span>, to configure all similar words (plural with singular, commands, and so on).</p>
+												</li>
+												<li class="step">
+													<p>In <em class="wordasword">event</em>, we enter the definition, good example, and bad example. In <em class="wordasword">events</em>, enter: <code class="literal">plural of event</code>.</p>
+												</li>
+												<li class="step">
+													<p>A non-AI checker tool (and even some AI tools) cannot see the difference in meanings in the use of 
+				<em class="wordasword">event</em> with our specific definition or the use of the non-allowed definition.
+				In <span class="guilabel">Rule</span>, enter: <code class="literal">Do not use to mean action of a user or server</code>. </p>
+													<p>Our checker tool will show rules to help writers be consistent.
+			</p>
+												</li>
+												<li class="step">
+													<p>For the words that start with <em class="wordasword">event</em> and are obviously commands or pathnames, 
+		set the <span class="guilabel">PoS</span> to <code class="literal">command</code> and <span class="guilabel">Allowed</span> to <code class="literal">T</code>.</p>
+													<p>
+			Add a row for the NOT allowed phrase <code class="literal">in the event</code> and make sure <em class="wordasword">if</em> is allowed.
+			
+		</p>
+												</li>
+											</ol>
+										</div>
+										<p>In this table, we don't show <span class="guilabel">Audience</span> (<code class="literal">all</code> for each row) or 
+ 		<span class="guilabel">Allowed?</span> (<code class="literal">T</code> for each row)</p>
+										<div class="table">
+											<a name="d5e502"/>
+											<p class="title">
+												<b>Table&nbsp;1.&nbsp;Dictionary Rows for <em class="wordasword">event</em>
+												</b>
+											</p>
+											<div class="table-contents">
+												<table class="table" summary="Dictionary Rows for event" border="1">
+													<colgroup>
+														<col>
+															<col>
+																<col>
+																	<col/>
+																	<thead>
+																		<tr>
+																			<th>Word</th>
+																			<th>Definition</th>
+																			<th>PoS</th>
+																			<th>Rule / ALT1</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>event</td>
+																			<td>object that contains a cybersecurity incident, report, or finding, with attributes, identifiers, and other data for analysis, prevention, and mitigation</td>
+																			<td>noun</td>
+																			<td>Do not use to mean action of a user or server</td>
+																		</tr>
+																		<tr>
+																			<td>events</td>
+																			<td>plural of EVENT</td>
+																			<td>noun</td>
+																			<td>Do not use to mean action of a user or server</td>
+																		</tr>
+																		<tr>
+																			<td>eventblocklists</td>
+																			<td>&nbsp;</td>
+																			<td>command</td>
+																			<td>&nbsp;</td>
+																		</tr>
+																		<tr>
+																			<td>eventgraph</td>
+																			<td>&nbsp;</td>
+																			<td>command</td>
+																			<td>&nbsp;</td>
+																		</tr>
+																		<tr>
+																			<td>eventid</td>
+																			<td>&nbsp;</td>
+																			<td>command</td>
+																			<td>&nbsp;</td>
+																		</tr>
+																		<tr>
+																			<td>eventinfo</td>
+																			<td>&nbsp;</td>
+																			<td>command</td>
+																			<td>&nbsp;</td>
+																		</tr>
+																		<tr>
+																			<td>eventreports</td>
+																			<td>&nbsp;</td>
+																			<td>command</td>
+																			<td>&nbsp;</td>
+																		</tr>
+																		<tr>
+																			<td>eventtag</td>
+																			<td>&nbsp;</td>
+																			<td>command</td>
+																			<td>&nbsp;</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+														</div>
+														<br class="table-break">
+															<div class="table">
+																<a name="d5e553"/>
+																<p class="title">
+																	<b>Table&nbsp;2.&nbsp;Dictionary Rows to Replace <em class="wordasword">in the event</em>
+																	</b>
+																</p>
+																<div class="table-contents">
+																	<table class="table" summary="Dictionary Rows to Replace in the event" border="1">
+																		<colgroup>
+																			<col>
+																				<col>
+																					<col>
+																						<col>
+																							<col>
+																								<col/>
+																								<thead>
+																									<tr>
+																										<th>Word</th>
+																										<th>Count</th>
+																										<th>Definition</th>
+																										<th>PoS</th>
+																										<th>Allowed?</th>
+																										<th>Rule / ALT1</th>
+																									</tr>
+																								</thead>
+																								<tbody>
+																									<tr>
+																										<td>in the event</td>
+																										<td>172</td>
+																										<td>&nbsp;</td>
+																										<td>phrase</td>
+																										<td>F</td>
+																										<td>IF</td>
+																									</tr>
+																									<tr>
+																										<td>if</td>
+																										<td>added</td>
+																										<td>introduces condition</td>
+																										<td>conjunction</td>
+																										<td>T</td>
+																										<td>Separate the condition from the action or result with a comma</td>
+																									</tr>
+																								</tbody>
+																							</table>
+																						</div>
+																					</div>
+																					<br class="table-break">
+																						<div class="procedure">
+																							<a name="d5e580"/>
+																							<p class="title">
+																								<b>Procedure&nbsp;7.&nbsp;Analyzing <em class="wordasword">type</em>:</b>
+																							</p>
+																							<p>This word is an excellent example. It is used in different parts of speech with different definitions in writing and native speaking. To control our written language,
+		we must restrict this word to one PoS and one definition. Or we can decide to set it to not allowed, to be replaced with specific words.</p>
+																							<ol class="procedure" type="1">
+																								<li class="step">
+																									<p>Search for <em class="wordasword">type</em> in the sample.</p>
+																								</li>
+																								<li class="step">
+																									<p>Look at the results with context. If it is not clear which PoS is mostly used, create a row in the dictionary for each PoS. We found that it was most often used as a noun or technical name, but there were sentences with <em class="wordasword">type</em> used as a verb.</p>
+																									<p>
+				</p>
+																									<div class="mediaobject">
+																										<img src="../../images/words_type01.png"/>
+																										<p>
+				
+			</p>
+																									</li>
+																									<li class="step">
+																										<p>Add a row for <em class="wordasword">type</em> as a verb and set it to not allowed.</p>
+																										<div class="table">
+																											<a name="d5e596"/>
+																											<p class="title">
+																												<b>Table&nbsp;3.&nbsp;Dictionary Rows for <em class="wordasword">type</em> as a verb</b>
+																											</p>
+																											<div class="table-contents">
+																												<table class="table" summary="Dictionary Rows for type as a verb" border="1">
+																													<colgroup>
+																														<col>
+																															<col>
+																																<col>
+																																	<col>
+																																		<col>
+																																			<col>
+																																				<col>
+																																					<col>
+																																						<col>
+																																							<col/>
+																																							<thead>
+																																								<tr>
+																																									<th>Word</th>
+																																									<th>Count</th>
+																																									<th>Definition</th>
+																																									<th>PoS</th>
+																																									<th>Good Example</th>
+																																									<th>Bad Example</th>
+																																									<th>Allowed?</th>
+																																									<th>Audience</th>
+																																									<th>Rule</th>
+																																									<th>ALT1</th>
+																																								</tr>
+																																							</thead>
+																																							<tbody>
+																																								<tr>
+																																									<td>type</td>
+																																									<td>added</td>
+																																									<td>1) to categorize; 2) to enter input with a keyboard</td>
+																																									<td>verb</td>
+																																									<td>enter yes</td>
+																																									<td>type yes</td>
+																																									<td>F</td>
+																																									<td>all</td>
+																																									<td>Do not use as a verb</td>
+																																									<td>ENTER</td>
+																																								</tr>
+																																							</tbody>
+																																						</table>
+																																					</div>
+																																				</div>
+																																				<br class="table-break"/>
+																																				<li class="step">
+																																					<p>Make sure <em class="wordasword">enter</em> is allowed.</p>
+																																					<div class="table">
+																																						<a name="d5e627"/>
+																																						<p class="title">
+																																							<b>Table&nbsp;4.&nbsp;Dictionary Rows for <em class="wordasword">enter</em>
+																																							</b>
+																																						</p>
+																																						<div class="table-contents">
+																																							<table class="table" summary="Dictionary Rows for enter" border="1">
+																																								<colgroup>
+																																									<col>
+																																										<col>
+																																											<col>
+																																												<col>
+																																													<col>
+																																														<col>
+																																															<col>
+																																																<col/>
+																																																<thead>
+																																																	<tr>
+																																																		<th>Word</th>
+																																																		<th>Count</th>
+																																																		<th>Definition</th>
+																																																		<th>PoS</th>
+																																																		<th>Good Example</th>
+																																																		<th>Bad Example</th>
+																																																		<th>Allowed?</th>
+																																																		<th>Audience</th>
+																																																	</tr>
+																																																</thead>
+																																																<tbody>
+																																																	<tr>
+																																																		<td>enter</td>
+																																																		<td>added</td>
+																																																		<td>to input values</td>
+																																																		<td>verb</td>
+																																																		<td>enter yes</td>
+																																																		<td>&nbsp;</td>
+																																																		<td>T</td>
+																																																		<td>all</td>
+																																																	</tr>
+																																																</tbody>
+																																															</table>
+																																														</div>
+																																													</div>
+																																													<br class="table-break"/>
+																																													<li class="step">
+																																														<p>We see that there are many uses of <em class="wordasword">type</em> in the GUI and CLI. We could try to make it a technical name for user interface (UX) creators. The word <em class="wordasword">type</em> would be allowed in
+				micro-copy and coding but not in technical writing. We would add a row for the UX persona in <em class="guilabel">Audience</em> that would be <code class="literal">Allowed</code> for <em class="wordasword">type</em> as
+				a <code class="literal">Name</code>. We would add another row for the other audiences that make use of <em class="wordasword">type</em> as a noun, set to <code class="literal">Allowed</code> = <code class="literal">False</code>.
+		</p>
+																																														<p>But we see in the results that <em class="wordasword">type</em> is used in text that cannot easily be rewritten. We must allow it for everyone, but only with the required definition, as an object in the product.</p>
+																																														<div class="table">
+																																															<a name="d5e660"/>
+																																															<p class="title">
+																																																<b>Table&nbsp;5.&nbsp;Dictionary Rows for <em class="wordasword">type</em> as a noun</b>
+																																															</p>
+																																															<div class="table-contents">
+																																																<table class="table" summary="Dictionary Rows for type as a noun" border="1">
+																																																	<colgroup>
+																																																		<col>
+																																																			<col>
+																																																				<col>
+																																																					<col>
+																																																						<col>
+																																																							<col>
+																																																								<col>
+																																																									<col>
+																																																										<col/>
+																																																										<thead>
+																																																											<tr>
+																																																												<th>Word</th>
+																																																												<th>Count</th>
+																																																												<th>Definition</th>
+																																																												<th>PoS</th>
+																																																												<th>Good Example</th>
+																																																												<th>Bad Example</th>
+																																																												<th>Allowed?</th>
+																																																												<th>Audience</th>
+																																																												<th>Rule</th>
+																																																											</tr>
+																																																										</thead>
+																																																										<tbody>
+																																																											<tr>
+																																																												<td>type</td>
+																																																												<td>added</td>
+																																																												<td>product group of objects with common characteristics</td>
+																																																												<td>Name</td>
+																																																												<td>some attribute types require associated events</td>
+																																																												<td>some types of attributes are more complex</td>
+																																																												<td>T</td>
+																																																												<td>all</td>
+																																																												<td>Do not use as general "kind"; use only as a category specific to the product</td>
+																																																											</tr>
+																																																										</tbody>
+																																																									</table>
+																																																								</div>
+																																																							</div>
+																																																							<br class="table-break"/>
+																																																							<li class="step">
+																																																								<p>Make sure the style guide rule that all text on the interface (GUI, API, or CLI) must be wrapped in an element, such as &lt;code&gt;, &lt;codeblock&gt;, &lt;guilabel&gt;. 
+		We can then set the checker tool to ignore text in these elements. 
+		If your checker tool shows the rules, it will not show this rule for interface labels, where it would cause user fatigue and be ignored when it is necessary.</p>
+																																																							</li>
+																																																							<li class="step">
+																																																								<p>We look through the uses of <em class="wordasword">type</em> to mean a general group of people or things having common characteristics. We can rewrite those. 
+		</p>
+																																																								<div class="itemizedlist">
+																																																									<ul class="itemizedlist" style="list-style-type: disc; ">
+																																																										<li class="listitem">
+																																																											<p>Given the text: 
+						</p>
+																																																											<div class="blockquote">
+																																																												<em style="color:red">
+																																																													<p>supports various relationship types, and their usage depends on the entity types being linked</p>
+																																																												</em>
+																																																											</div>
+																																																											<p>
+					</p>
+																																																											<p>This one sentence uses <em class="wordasword">type</em> with two definitions. The first can be removed. The second 
+						fits the allowed definition.</p>
+																																																											<p>Controlled version: <code class="literal">supports various relationships, and their usage requires linked entity types</code>
+																																																											</p>
+																																																										</li>
+																																																										<li class="listitem">
+																																																											<p>Given the text: </p>
+																																																											<div class="blockquote">
+																																																												<em style="color:red">
+																																																													<p>there are two types of admins: Org Admins and Site Admins</p>
+																																																												</em>
+																																																											</div>
+																																																											<p>
+					</p>
+																																																											<p>The use of <em class="wordasword">type</em> is not required. 
+						If the SME does not like <em class="wordasword">level</em>, we can change it to a different word
+						(<em class="wordasword">set</em>, <em class="wordasword">permissions</em>). 
+						Also note that we remove <em class="wordasword">two</em>. 
+						It is always best to not enumerate features, to make sure you do not create a conflict in the text when a new feature is added.</p>
+																																																											<p>Controlled version: <code class="literal">there are different admin levels: Org Admins and Site Admins</code>
+																																																											</p>
+																																																										</li>
+																																																										<li class="listitem">
+																																																											<p>Given the text: </p>
+																																																											<div class="blockquote">
+																																																												<em style="color:red">
+																																																													<p>the type of storage used by Product can have an impact</p>
+																																																												</em>
+																																																											</div>
+																																																											<p>
+					</p>
+																																																											<p>The full text discussed SSD devices and feed caching technology. We guess that "type" meant hardware and configuration.</p>
+																																																											<p>Controlled version: <code class="literal">The storage you use can have an impact.</code> OR 
+						<code class="literal">your storage hardware and algorithm can impact Product</code> OR
+						<code class="literal">storage hardware can impact Product</code>
+																																																											</p>
+																																																										</li>
+																																																									</ul>
+																																																								</div>
+																																																							</li>
+																																																						</ol>
+																																																					</div>
+																																																				</div>
+																																																				<div class="navfooter">
+																																																					<hr>
+																																																						<table width="100%" summary="Navigation footer">
+																																																							<tr>
+																																																								<td width="40%" align="left">
+																																																									<a accesskey="p" href="ar08.html">Prev</a>&nbsp;</td>
+																																																								<td width="20%" align="center">
+																																																									<a accesskey="u" href="ar08.html">Up</a>
+																																																								</td>
+																																																								<td width="40%" align="right">&nbsp;<a accesskey="n" href="ar09.html">Next</a>
+																																																								</td>
+																																																							</tr>
+																																																							<tr>
+																																																								<td width="40%" align="left" valign="top">Analyzing Words&nbsp;</td>
+																																																								<td width="20%" align="center">
+																																																									<a accesskey="h" href="index.html">Home</a>
+																																																								</td>
+																																																								<td width="40%" align="right" valign="top">&nbsp;What Now?</td>
+																																																							</tr>
+																																																						</table>
+																																																					</div>
+																																																				</body>
+																																																			</html>

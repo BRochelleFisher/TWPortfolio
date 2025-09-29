@@ -1,0 +1,151 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title xmlns:ng="http://docbook.org/docbook-ng">Add Default Definitions</title><meta xmlns:ng="http://docbook.org/docbook-ng" name="generator" content="DocBook XSL Stylesheets V1.79.2"><link rel="home" href="index.html" title="Creating Your Controlled Language"><link rel="up" href="index.html" title="Creating Your Controlled Language"><link rel="prev" href="ar04s02.html" title="Create the Dictionary File"><link rel="next" href="ar06.html" title="Provide Context"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Add Default Definitions</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ar04s02.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ar06.html">Next</a></td></tr></table><hr></div><div class="article"><div class="titlepage"><div><div><h1 class="title"><a name="d5e136"></a>Add Default Definitions</h1></div></div><hr></div><p>The main principle of a controlled language is that every word is used with one definition and one part of speech. The definition of the word
+    in the Dictionary is important and must exist. The technical writer could create the definition for each word as they get to it. That requires some 
+    time in dictionary.com or similar sites to add definitions for basic words. It is true that the technical writer will have to work out the best definition
+    of words specific to cybersecurity, but if you can add default definitions when you create the dictionary file, it can save a lot of time.
+    </p><p>This code gets definitions of the words in the dictionary from the Free Dictionary API. Save this code as a Python file and run it. Open the results 
+    in a Google Sheet. Replace the empty Definition column with the results. Format the cells to show the writer that these definitions must be reviewed. For 
+    example, make the background of the cell light red. The writer will change the color when they update the definition for cybersecurity.</p><p>Note: if the word is not in the free dictionary, the definition is empty. This is acceptable for the first run through. The technical writer will
+    add the missing definition.</p><pre class="programlisting">
+<strong class="hl-keyword">import</strong> requests
+<strong class="hl-keyword">import</strong> json
+<strong class="hl-keyword">import</strong> time
+<strong class="hl-keyword">import</strong> os
+
+<strong class="hl-keyword">def</strong> get_definition_from_free_dictionary_api(word):
+    <strong class="hl-string"><em style="color:gray">"""
+    Fetches the definition of a word from the Free Dictionary API.
+    Returns a cleaned, single-line definition or an error/not-found message.
+    """</em></strong>
+    url = f<strong class="hl-string"><em style="color:red">"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"</em></strong>
+
+    <strong class="hl-keyword">try</strong>:
+        response = requests.get(url)
+        response.raise_for_status()  
+        <em class="hl-comment" style="color: silver"># Raise an exception for HTTP errors (404 for not found)</em>
+
+        data = response.json()
+
+        <strong class="hl-keyword">if</strong> isinstance(data, list) <strong class="hl-keyword">and</strong> data:
+            <em class="hl-comment" style="color: silver"># Prioritize a concise definition</em>
+            definitions_list = []
+            <strong class="hl-keyword">if</strong> <strong class="hl-string"><em style="color:red">'meanings'</em></strong> <strong class="hl-keyword">in</strong> data[<span class="hl-number">0</span>]:
+                <strong class="hl-keyword">for</strong> meaning <strong class="hl-keyword">in</strong> data[<span class="hl-number">0</span>][<strong class="hl-string"><em style="color:red">'meanings'</em></strong>]:
+                    <strong class="hl-keyword">if</strong> <strong class="hl-string"><em style="color:red">'definitions'</em></strong> <strong class="hl-keyword">in</strong> meaning:
+                        <strong class="hl-keyword">for</strong> definition_obj <strong class="hl-keyword">in</strong> meaning[<strong class="hl-string"><em style="color:red">'definitions'</em></strong>]:
+                            definition_text = \ 
+                            definition_obj.get(<strong class="hl-string"><em style="color:red">'definition'</em></strong>)
+                            <strong class="hl-keyword">if</strong> definition_text:
+                                definitions_list.append \
+                                (definition_text.replace \
+                                (<strong class="hl-string"><em style="color:red">'\n'</em></strong>, <strong class="hl-string"><em style="color:red">' '</em></strong>).strip()) 
+                                <em class="hl-comment" style="color: silver"># Remove newlines in definition</em>
+
+                <strong class="hl-keyword">if</strong> definitions_list:
+                    <em class="hl-comment" style="color: silver"># Join the first few distinct definitions if available</em>
+                    <em class="hl-comment" style="color: silver"># Take unique definitions to avoid repetition</em>
+                    unique_defs = []
+                    <strong class="hl-keyword">for</strong> d <strong class="hl-keyword">in</strong> definitions_list:
+                        <strong class="hl-keyword">if</strong> d <strong class="hl-keyword">not</strong> <strong class="hl-keyword">in</strong> unique_defs:
+                            unique_defs.append(d)
+                        <strong class="hl-keyword">if</strong> len(unique_defs) &gt;= <span class="hl-number">2</span>: 
+                        <em class="hl-comment" style="color: silver"># Get up to 2 concise definitions</em>
+                            <strong class="hl-keyword">break</strong>
+                    <strong class="hl-keyword">return</strong> <strong class="hl-string"><em style="color:red">"; "</em></strong>.join(unique_defs)
+            <strong class="hl-keyword">return</strong> <strong class="hl-string"><em style="color:red">"No concise definition found."</em></strong>
+
+        <strong class="hl-keyword">elif</strong> isinstance(data, dict) <strong class="hl-keyword">and</strong> data.get(<strong class="hl-string"><em style="color:red">'title'</em></strong>) \
+        == <strong class="hl-string"><em style="color:red">'No Definitions Found'</em></strong>:
+            <strong class="hl-keyword">return</strong> <strong class="hl-string"><em style="color:red">"No definition found for this word."</em></strong>
+        <strong class="hl-keyword">else</strong>:
+            <strong class="hl-keyword">return</strong> f<strong class="hl-string"><em style="color:red">"API returned unexpected data for \ 
+</em></strong>            <strong class="hl-string"><em style="color:red">'{word}'</em></strong>.<strong class="hl-string"><em style="color:red">"
+</em></strong>
+    <strong class="hl-keyword">except</strong> requests.exceptions.RequestException <strong class="hl-keyword">as</strong> e:
+        <strong class="hl-keyword">return</strong> f<strong class="hl-string"><em style="color:red">"Error: {e}"</em></strong>
+    <strong class="hl-keyword">except</strong> json.JSONDecodeError:
+        <strong class="hl-keyword">return</strong> f<strong class="hl-string"><em style="color:red">"Error: Invalid JSON response."</em></strong>
+    <strong class="hl-keyword">except</strong> Exception <strong class="hl-keyword">as</strong> e:
+        <strong class="hl-keyword">return</strong> f<strong class="hl-string"><em style="color:red">"An unexpected error occurred: {e}"</em></strong>
+
+<strong class="hl-keyword">def</strong> process_word_list_file(filepath):
+    <strong class="hl-string"><em style="color:gray">"""
+    Reads words from the file, fetches definitions, and writes them back
+    to the same file with a comma delimiter.
+    """</em></strong>
+    temp_lines = []
+    processed_count = <span class="hl-number">0</span>
+
+    <strong class="hl-keyword">try</strong>:
+        <em class="hl-comment" style="color: silver"># Read the existing content first</em>
+        <strong class="hl-keyword">with</strong> open(filepath, <strong class="hl-string"><em style="color:red">'r'</em></strong>, encoding=<strong class="hl-string"><em style="color:red">'utf-8'</em></strong>) <strong class="hl-keyword">as</strong> f:
+            <strong class="hl-keyword">for</strong> line <strong class="hl-keyword">in</strong> f:
+                original_line = line.strip()
+                word = original_line.split(<strong class="hl-string"><em style="color:red">','</em></strong>)[<span class="hl-number">0</span>].strip() 
+                <em class="hl-comment" style="color: silver"># Get the word before the first comma</em>
+
+                <strong class="hl-keyword">if</strong> <strong class="hl-keyword">not</strong> word: <em class="hl-comment" style="color: silver"># Skip empty lines</em>
+                    temp_lines.append(original_line) 
+                    <em class="hl-comment" style="color: silver"># Keep empty lines as they are</em>
+                    <strong class="hl-keyword">continue</strong>
+                <strong class="hl-string"><em style="color:gray">"""
+                Check if the line already contains a definition 
+                (has a comma)
+                """</em></strong>
+                <strong class="hl-keyword">if</strong> <strong class="hl-string"><em style="color:red">','</em></strong> <strong class="hl-keyword">in</strong> original_line:
+                 <strong class="hl-string"><em style="color:gray">"""
+                 Assuming comma exists: it is already processed,
+                 or we want to re-process it.
+                 If you want to skip already defined words, 
+                 add a check here.
+                 """</em></strong>
+                    <strong class="hl-keyword">pass</strong>
+
+                <strong class="hl-keyword">print</strong>(f<strong class="hl-string"><em style="color:red">"Processing '{word}'..."</em></strong>)
+                definition = get_definition_from_free_dictionary_api(word)
+
+                <em class="hl-comment" style="color: silver"># Combine word and definition with a comma</em>
+                new_line = f<strong class="hl-string"><em style="color:red">"{word},{definition}"</em></strong>
+                temp_lines.append(new_line)
+                processed_count += <span class="hl-number">1</span>
+                time.sleep(<span class="hl-number">0.5</span>) <em class="hl-comment" style="color: silver"># Be polite to the API</em>
+
+        <em class="hl-comment" style="color: silver"># Write all processed lines back to the same file</em>
+        <strong class="hl-keyword">with</strong> open(filepath, <strong class="hl-string"><em style="color:red">'w'</em></strong>, encoding=<strong class="hl-string"><em style="color:red">'utf-8'</em></strong>) <strong class="hl-keyword">as</strong> f:
+            <strong class="hl-keyword">for</strong> line <strong class="hl-keyword">in</strong> temp_lines:
+                f.write(line + <strong class="hl-string"><em style="color:red">'\n'</em></strong>) <em class="hl-comment" style="color: silver"># Add newline back for each line</em>
+
+        <strong class="hl-keyword">print</strong>(f<strong class="hl-string"><em style="color:red">"\nSuccessfully processed {processed_count} \ 
+</em></strong>         words <strong class="hl-keyword">and</strong> updated <strong class="hl-string"><em style="color:red">'{filepath}'</em></strong>.<strong class="hl-string"><em style="color:red">")
+</em></strong>
+    <strong class="hl-keyword">except</strong> FileNotFoundError:
+        <strong class="hl-keyword">print</strong>(f<strong class="hl-string"><em style="color:red">"Error: The file '{filepath}' was not found."</em></strong>)
+    <strong class="hl-keyword">except</strong> Exception <strong class="hl-keyword">as</strong> e:
+        <strong class="hl-keyword">print</strong>(f<strong class="hl-string"><em style="color:red">"An error occurred during file processing: {e}"</em></strong>)
+
+<strong class="hl-keyword">if</strong> __name__ == <strong class="hl-string"><em style="color:red">"__main__"</em></strong>:
+    <em class="hl-comment" style="color: silver"># Define the name of your word list file</em>
+    word_list_filename = <strong class="hl-string"><em style="color:red">"UWords.txt"</em></strong>
+
+    <em class="hl-comment" style="color: silver"># Construct the full path to the words file</em>
+    script_dir = os.path.dirname(__file__)
+    word_file_path = os.path.join(script_dir, word_list_filename)
+
+    <em class="hl-comment" style="color: silver"># File exists? If not, create it with example words</em>
+    <strong class="hl-keyword">if</strong> <strong class="hl-keyword">not</strong> os.path.exists(word_file_path):
+        <strong class="hl-keyword">print</strong>(f<strong class="hl-string"><em style="color:red">"'{word_list_filename}' not found. \ 
+</em></strong>         Creating it <strong class="hl-keyword">with</strong> example words.<strong class="hl-string"><em style="color:red">")
+</em></strong>        <strong class="hl-keyword">with</strong> open(word_file_path, <strong class="hl-string"><em style="color:red">'w'</em></strong>, encoding=<strong class="hl-string"><em style="color:red">'utf-8'</em></strong>) <strong class="hl-keyword">as</strong> f:
+            f.write(<strong class="hl-string"><em style="color:red">"apple\n"</em></strong>)
+            f.write(<strong class="hl-string"><em style="color:red">"run\n"</em></strong>)
+            f.write(<strong class="hl-string"><em style="color:red">"beautiful\n"</em></strong>)
+            f.write(<strong class="hl-string"><em style="color:red">"galaxy\n"</em></strong>)
+            f.write(<strong class="hl-string"><em style="color:red">"nonexistentword123\n"</em></strong>)
+            f.write(<strong class="hl-string"><em style="color:red">"serendipity\n"</em></strong>)
+            f.write(<strong class="hl-string"><em style="color:red">"ubiquitous\n"</em></strong>)
+        <strong class="hl-keyword">print</strong>(<strong class="hl-string"><em style="color:red">"Example words added. Run again to fetch definitions."</em></strong>)
+    <strong class="hl-keyword">else</strong>:
+        <em class="hl-comment" style="color: silver"># If the file exists, process it</em>
+        process_word_list_file(word_file_path)
+    </pre><p>Script created by Gemini, Google AI.</p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ar04s02.html">Prev</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ar06.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Create the Dictionary File&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;Provide Context</td></tr></table></div></body></html>

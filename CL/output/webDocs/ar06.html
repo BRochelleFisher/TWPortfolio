@@ -1,0 +1,180 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+			<title xmlns:ng="http://docbook.org/docbook-ng">Provide Context</title>
+			<meta xmlns:ng="http://docbook.org/docbook-ng" name="generator" content="DocBook XSL Stylesheets V1.79.2">
+				<link rel="home" href="index.html" title="Creating Your Controlled Language">
+					<link rel="up" href="index.html" title="Creating Your Controlled Language">
+						<link rel="prev" href="ar05.html" title="Add Default Definitions">
+							<link rel="next" href="ar07.html" title="Getting Started with the Dictionary"/>
+	</head>
+	<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+								<div class="navheader">
+									<table width="100%" summary="Navigation header">
+										<tr>
+											<th colspan="3" align="center">Provide Context</th>
+										</tr>
+										<tr>
+											<td width="20%" align="left">
+												<a accesskey="p" href="ar05.html">Prev</a>&nbsp;</td>
+											<th width="60%" align="center">&nbsp;</th>
+											<td width="20%" align="right">&nbsp;<a accesskey="n" href="ar07.html">Next</a>
+											</td>
+										</tr>
+									</table>
+									<hr/>
+									<div class="article">
+										<div class="titlepage">
+											<div>
+												<div>
+													<h1 class="title">
+														<a name="d5e144"/>Provide Context</h1>
+												</div>
+											</div>
+											<hr/>
+											<p>The main principle of a controlled language is that every word is used with one definition and one part of speech (PoS). The PoS of the word
+        in the Dictionary is important and must exist.</p>
+		<p>The technical writer will:</p>
+		<ul>
+			<li><p>Use a search-all feature in Adobe PDF or in a
+        feature-rich text editor, to get all instances of each word, with context.</p></li>
+			<li><p>Review all the uses of each word in the aggregated sample, to analyze which PoS
+        is most used, which best fits the style guide, and which is least ambiguous.</p></li>
+		</ul>
+		<p>You can save the time of each lookup
+        with a script that gets
+        the context results for the technical writer.</p>
+    
+											<p>This code gets the context of each word: 5 words before the word and 5 after.  You can change the number of words when you run the script.</p>
+											<div class="procedure">
+												<ol class="procedure" type="1">
+													<li class="step">
+														<p>Save the words, the [0] item in each line of the CSV or the first column of the Dictionary file, as a file.</p>
+													</li>
+													<li class="step">
+														<p>Save the code below as a Python file. Run it:</p>
+														<p>
+															<span class="command">
+																<strong>python wordContext.py &gt; words.csv aggregate.txt Context.txt 5</strong>
+															</span>
+														</p>
+														<p>Where
+														<ul>
+														<li>wordContext.py = this Python code</li>
+														<li>words.csv = file created in step 1 that holds the words</li>
+														<li>aggregate.txt = aggregated text file</li>
+														<li>Context.txt = output file to send to the technical writer</li>
+														<li>5 = number of words before and after the word in focus</li>
+														</ul>
+														</p>
+													</li>
+													<li class="step">
+														<p>Send the output file to the technical writer.</p>
+													</li>
+												</ol>
+											</div>
+		<pre class="programlisting">
+			<code class="language-python">
+import re
+
+def extract_word_context_to_file(words_file, content_file, output_file, \ 
+ context_word_count=5):
+    <em style="color: gray">"""
+    Finds words from a list in a content file and extracts a context of
+    'context_word_count' words before and after the found word.
+    Writes the results to a new output file.
+
+    Args:
+        words_file (str): Path to file with words, one in each line.
+        content_file (str): Path to the aggregate file.
+        output_file (str): Pathname of file with results.
+        context_word_count (int): Number of words before and after.
+    """</em>
+    try:
+        with open(words_file, 'r', encoding='utf-8') as wf:
+            target_words = [word.strip() for word in wf if word.strip()]
+
+        with open(content_file, 'r', encoding='utf-8') as cf:
+            content = cf.read()
+     <em style="color: gray">"""
+        Split content into words, keep punctuation for simpler splitting.
+        A more robust solution might separate punctuation.
+        """</em>
+        all_words = re.findall(r'\b\w+\b|[^\w\s]', content.lower()) \
+        <em style="color: gray"># Lowercase for matching</em>
+
+        found_contexts = []
+
+        for target_word in target_words:
+            <em style="color: gray"># Iterate through the content to find matches</em>
+            for i, word_in_content in enumerate(all_words):
+                if word_in_content == target_word.lower(): \ 
+                <em style="color: gray"># Case-insensitive matching</em>
+                    <em style="color: gray"># Determine start and end index for context</em>
+                    start_index = max(0, i - context_word_count)
+                    end_index = min(len(all_words), \ 
+                     i + context_word_count + 1)
+
+                    <em style="color: gray"># Extract the context words</em>
+                    context = all_words[start_index:end_index]
+
+                    <em style="color: gray"># Reconstruct the context string</em>
+                    context_string = ' '.join(context)
+
+                    found_contexts.append(f"Target Word: {target_word}\n \ 
+                     Context: {context_string.strip()}\n")
+
+        with open(output_file, 'w', encoding='utf-8') as of:
+            if found_contexts:
+                for item in found_contexts:
+                    of.write(item + "-----\n") \ 
+                    # Added a delimiter for readability between entries
+                print(f"Contexts successfully written to '{output_file}'.")
+            else:
+                of.write(f"No matching words found for words in \
+                 '{words_file}' within '{content_file}'.")
+                print(f"No matching words found. '{output_file}' \ 
+                created with a note.")
+
+    except FileNotFoundError:
+        print(f"Error: Required file not found. \
+        Make sure '{words_file}' and '{content_file}' exist.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    UWORDS_FILE = "UWords.txt"
+    SAMPLE_AGG_FILE = "SampleAgg.txt"
+    OUTPUT_CONTEXT_FILE = "FoundWordContexts.txt" \ 
+    <em style="color: gray"># New output file for contexts</em>
+    CONTEXT_WORDS = 5 \ 
+    <em style="color: gray"># Number of words before and after</em>
+
+    extract_word_context_to_file \
+     (UWORDS_FILE, SAMPLE_AGG_FILE, OUTPUT_CONTEXT_FILE, CONTEXT_WORDS)
+   
+		</code>
+    </pre>
+											<p>Script created by Gemini, Google AI.</p>
+										</div>
+										<div class="navfooter">
+											<hr>
+												<table width="100%" summary="Navigation footer">
+													<tr>
+														<td width="40%" align="left">
+															<a accesskey="p" href="ar05.html">Prev</a>&nbsp;</td>
+														<td width="20%" align="center">&nbsp;</td>
+														<td width="40%" align="right">&nbsp;<a accesskey="n" href="ar07.html">Next</a>
+														</td>
+													</tr>
+													<tr>
+														<td width="40%" align="left" valign="top">Add Default Definitions&nbsp;</td>
+														<td width="20%" align="center">
+															<a accesskey="h" href="index.html">Home</a>
+														</td>
+														<td width="40%" align="right" valign="top">&nbsp;Getting Started with the Dictionary</td>
+													</tr>
+												</table>
+											</div>
+										</body>
+									</html>

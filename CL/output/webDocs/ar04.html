@@ -1,0 +1,200 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+			<title xmlns:ng="http://docbook.org/docbook-ng">Creating the Word List</title>
+			<meta xmlns:ng="http://docbook.org/docbook-ng" name="generator" content="DocBook XSL Stylesheets V1.79.2">
+				<link rel="home" href="index.html" title="Creating Your Controlled Language">
+					<link rel="up" href="index.html" title="Creating Your Controlled Language">
+						<link rel="prev" href="ar03.html" title="Collecting Samples">
+							<link rel="next" href="ar04s02.html" title="Create the Dictionary File"/>
+							<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+								<div class="navheader">
+									<table width="100%" summary="Navigation header">
+										<tr>
+											<th colspan="3" align="center">Creating the Word List</th>
+										</tr>
+										<tr>
+											<td width="20%" align="left">
+												<a accesskey="p" href="ar03.html">Prev</a>&nbsp;</td>
+											<th width="60%" align="center">&nbsp;</th>
+											<td width="20%" align="right">&nbsp;<a accesskey="n" href="ar04s02.html">Next</a>
+											</td>
+										</tr>
+									</table>
+									<hr/>
+									<div class="article">
+										<div class="titlepage">
+											<div>
+												<div>
+													<h1 class="title">
+														<a name="d5e86"/>Creating the Word List</h1>
+												</div>
+											</div>
+											<hr/>
+											<div class="toc">
+												<p>
+													<b>Table of Contents</b>
+												</p>
+												<dl class="toc">
+													<dt>
+														<span class="section">
+															<a href="ar04.html#d5e89">Create and Run the Word Counter Python Script</a>
+														</span>
+													</dt>
+													<dt>
+														<span class="section">
+															<a href="ar04s02.html">Create the Dictionary File</a>
+														</span>
+													</dt>
+												</dl>
+											</div>
+											<div class="section">
+												<div class="titlepage">
+													<div>
+														<div>
+															<h2 class="title" style="clear: both">
+																<a name="d5e89"/>Create and Run the Word Counter Python Script</h2>
+														</div>
+													</div>
+												</div>
+												<p>To create the dictionary, we start with the unique words used and how many times each word is used in our sample. This Python script will give us a file formatted for easy import to a spreadsheet.</p>
+												<div class="procedure">
+													<a name="d5e92"/>
+													<p class="title">
+														<b>Procedure&nbsp;1.&nbsp;To create and run the Python script word_counter.py:</b>
+													</p>
+													<ol class="procedure" type="1">
+														<li class="step">
+															<p>Save your aggregated sample as <code class="filename">sampleAgg.txt</code>.</p>
+														</li>
+														<li class="step">
+															<p>Copy this script to a text editor.</p>
+														</li>
+														<li class="step">
+															<p>In the same folder as <code class="filename">sampleAgg.txt</code>, save the file as <code class="filename">word_counter.py</code>.</p>
+														</li>
+														<li class="step">
+															<p>Run the Python script:</p>
+															<p>
+																<span class="command">
+																	<strong>python word_counter.py &gt; dictionary.csv</strong>
+																</span>
+															</p>
+														</li>
+													</ol>
+												</div>
+												<pre class="programlisting">
+													<strong class="hl-keyword">import</strong> re
+<strong class="hl-keyword">import</strong> sys
+<strong class="hl-keyword">from</strong> collections <strong class="hl-keyword">import</strong> Counter
+
+<strong class="hl-keyword">def</strong> analyze_document_frequency(filepath: str = <strong class="hl-string">
+														<em style="color:red">"sampleAgg.txt"</em>
+													</strong>):
+    <strong class="hl-string">
+														<em style="color:red">"""
+    Analyzes a text document to count word frequency.
+
+    This function reads a text file, converts its content to lowercase,
+    extracts words between 4 and 15 characters long,
+    and counts the occurrences of each extracted word. It prints
+    the words sorted by frequency in descending order, then 
+    alphabetically for ties.
+
+    Args:
+        filepath (str): The path to the input text file. 
+        Defaults to "sampleAgg.txt".
+
+    Returns:
+        None: Prints the word frequencies to standard output. 
+        Errors are printed to stderr.
+    """</em>
+													</strong>
+													<strong class="hl-keyword">try</strong>:
+        <em class="hl-comment" style="color: silver"># Open and read the document, converting content to lowercase.</em>
+													<em class="hl-comment" style="color: silver"># 'utf-8' encoding is specified for broad compatibility.</em>
+													<strong class="hl-keyword">with</strong> open(filepath, <strong class="hl-string">
+														<em style="color:red">'r'</em>
+													</strong>, encoding=<strong class="hl-string">
+														<em style="color:red">'utf-8'</em>
+													</strong>) <strong class="hl-keyword">as</strong> document_file:
+            text_string = document_file.read().lower()
+    <strong class="hl-keyword">except</strong> FileNotFoundError:
+        <em class="hl-comment" style="color: silver"># Handle the case where the specified input file does not exist.</em>
+													<strong class="hl-keyword">print</strong>(f<strong class="hl-string">
+														<em style="color:red">"Error: '{filepath}' not found."</em>
+													</strong>, file=sys.stderr)
+        <strong class="hl-keyword">return</strong>
+													<strong class="hl-keyword">except</strong> Exception <strong class="hl-keyword">as</strong> e:
+        <em class="hl-comment" style="color: silver"># Catch other general exceptions during file reading.</em>
+													<strong class="hl-keyword">print</strong>(f<strong class="hl-string">
+														<em style="color:red">"Error while reading: {e}"</em>
+													</strong>, file=sys.stderr)
+        <strong class="hl-keyword">return</strong>
+													<em class="hl-comment" style="color: silver"># Use regular expression to find all words.</em>
+													<em class="hl-comment" style="color: silver"># '\b' ensures whole words. '[a-z]{4,15}' matches lowercase</em>
+													<em class="hl-comment" style="color: silver"># letters between 4 and 15 characters.</em>
+    match_pattern = re.findall(r<strong class="hl-string">
+														<em style="color:red">'\b[a-z]{4,15}\b'</em>
+													</strong>, text_string)
+
+    <em class="hl-comment" style="color: silver"># Count word occurrences using collections.</em>
+													<em class="hl-comment" style="color: silver"># Counter for efficiency.</em>
+    word_counts = Counter(match_pattern)
+
+    <em class="hl-comment" style="color: silver"># Sort words: primary key is count (descending), </em>
+													<em class="hl-comment" style="color: silver"># secondary key is word (ascending).</em>
+													<em class="hl-comment" style="color: silver"># Lambda function creates a tuple for sorting: </em>
+													<em class="hl-comment" style="color: silver"># (-count) for descending, then word for ascending.</em>
+    sorted_words = sorted(word_counts.items(), \ 
+    key=<strong class="hl-keyword">lambda</strong> item: (-item[<span class="hl-number">1</span>], item[<span class="hl-number">0</span>]))
+
+    <strong class="hl-keyword">print</strong>(<strong class="hl-string">
+														<em style="color:red">"Word Frequencies:"</em>
+													</strong>)
+    <strong class="hl-keyword">print</strong>(<strong class="hl-string">
+														<em style="color:red">"-----------------"</em>
+													</strong>)
+    <em class="hl-comment" style="color: silver"># Iterate through the sorted words and </em>
+													<em class="hl-comment" style="color: silver"># print each word and its count, separated by a pipe.</em>
+													<strong class="hl-keyword">for</strong> word, count <strong class="hl-keyword">in</strong> sorted_words:
+        <strong class="hl-keyword">print</strong>(f<strong class="hl-string">
+														<em style="color:red">"{word} | {count}"</em>
+													</strong>)
+
+<strong class="hl-keyword">if</strong> __name__ == <strong class="hl-string">
+														<em style="color:red">"__main__"</em>
+													</strong>:
+    <em class="hl-comment" style="color: silver"># Make sure the function runs only when </em>
+													<em class="hl-comment" style="color: silver"># the script is executed directly, </em>
+													<em class="hl-comment" style="color: silver"># not when imported as a module.</em>
+    analyze_document_frequency()
+		</pre>
+												<p>Note on Code Source:  
+		This code started with the Python script in <span class="emphasis">
+														<em>Alchemy of Tomes</em>
+													</span> [<span class="citation">Fisher (2020)</span>], which
+		does not work in the latest Python versions. We used Gemini (Google AI) to update this script.</p>
+											</div>
+										</div>
+										<div class="navfooter">
+											<hr>
+												<table width="100%" summary="Navigation footer">
+													<tr>
+														<td width="40%" align="left">
+															<a accesskey="p" href="ar03.html">Prev</a>&nbsp;</td>
+														<td width="20%" align="center">&nbsp;</td>
+														<td width="40%" align="right">&nbsp;<a accesskey="n" href="ar04s02.html">Next</a>
+														</td>
+													</tr>
+													<tr>
+														<td width="40%" align="left" valign="top">Collecting Samples&nbsp;</td>
+														<td width="20%" align="center">
+															<a accesskey="h" href="index.html">Home</a>
+														</td>
+														<td width="40%" align="right" valign="top">&nbsp;Create the Dictionary File</td>
+													</tr>
+												</table>
+											</div>
+										</body>
+									</html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <article version="5.2" xmlns="http://docbook.org/ns/docbook"
          xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -68,3 +69,75 @@
   
      
  </article> 
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.2" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xila="http://www.w3.org/2001/XInclude/local-attributes"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:trans="http://docbook.org/ns/transclusion"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Project Tasks</title>
+
+   <!--  <author>
+      <personname><firstname>Rochelle</firstname><surname>Fisher</surname></personname>
+    </author> 
+
+    <pubdate>21 August 2025</pubdate>-->
+  </info>
+  <formalpara>
+    <title>Task: Communicate</title>
+    <para>Expected Output: Buy-in from the technical writers to be motivated to create the CL, to use it daily, to learn the rules, and to maintain changes as required.</para>  
+  </formalpara>
+  <para>Owner: Manager of Technical Writers or higher</para>
+  <para>Est. Effort: 1 - 5 hrs</para>
+  
+  <formalpara>
+    <title>Task: Collect Documentation</title>
+    <para>Expected Output: One aggregate text file of all documentation of a product</para>  
+  </formalpara>
+  <para>Owner: Technical Writer</para>
+  <para>Est. Effort: 5 - 9 hrs</para>
+  
+  <formalpara>
+    <title>Task: Create Dictionary File</title>
+    <para>Expected Output: Spreadsheet with all unique words, the count of each word in your documentation, and columns for linguistic analysis</para>  
+  </formalpara>
+  <para>Owner: Developer (possible tech writer with Python experience)</para>
+  <para>Est. Effort: 1 - 4 hrs</para>
+    
+  <formalpara>
+    <title>Task: Acquire or develop checker tool</title>
+    <para>Expected Output: A tool that will tell writers when they do not conform with the Dictionary, replacement words or content to rewrite, and 
+      rules that explain why. Most often, if you develop a tool in-house, it will not integrate with the authoring tool. Writers will 
+      get results only after they wrote a topic or book. If you acquire a tool, make sure it integrates with your authoring tool,
+      for on-the-fly checks and fast rewrites.</para>  
+  </formalpara>
+  <para>Owner: Technical Writer / Decision-Maker</para>
+  <para>Your technical writer researches the features and cost of tools, such as Writer and Jasper. If the cost is out of 
+    your budget for documentation, you will require the time and services of a developer. The technical writer should manage
+    the developer's requirements and expected output.</para>
+  <para>Est. Effort: Depends on solution</para>
+  <para>The tech writer can begin working the Dictionary before the tool is acquired or created. If you acquire a tool before the writer begins,
+    it may save some days that might be required to change the Dictionary structure to import properly to the tool.</para>
+       
+  <formalpara>
+    <title>Task: Create Vocabulary Values in Dictionary File</title>
+    <para>Expected Output: A complete vocabulary in a spreadsheet or acquired tool, with words and phrases, set to allowed or not allowed, each with a specific defintion and part of speech,
+      with examples and rules to help writers remain consistent.</para>  
+  </formalpara>
+  <para>Owner: Technical Writer</para>
+ 
+  <para>Est. Effort: 20 words/hour</para>
+  <para>
+    For a Dictionary with 10K - 50K words, and tech writers who work on it as a side project, plan for one work-year.
+  </para>
+ 
+  
+     
+ </article> 
+>>>>>>> 10728bbeda71baf15d8970f6e1e88c1c9dcc5f59

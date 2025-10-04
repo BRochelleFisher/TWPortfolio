@@ -83,93 +83,40 @@
 														</li>
 													</ol>
 												</div>
-												<pre class="programlisting">
-													<strong class="hl-keyword">import</strong> re
-<strong class="hl-keyword">import</strong> sys
-<strong class="hl-keyword">from</strong> collections <strong class="hl-keyword">import</strong> Counter
+<pre class="programlisting">
+	<code Language="Python">
+import re
+import string
+import sys
+from collections import Counter
 
-<strong class="hl-keyword">def</strong> analyze_document_frequency(filepath: str = <strong class="hl-string">
-														<em style="color:red">"sampleAgg.txt"</em>
-													</strong>):
-    <strong class="hl-string">
-														<em style="color:red">"""
-    Analyzes a text document to count word frequency.
-
-    This function reads a text file, converts its content to lowercase,
-    extracts words between 4 and 15 characters long,
-    and counts the occurrences of each extracted word. It prints
-    the words sorted by frequency in descending order, then 
-    alphabetically for ties.
-
-    Args:
-        filepath (str): The path to the input text file. 
-        Defaults to "sampleAgg.txt".
-
-    Returns:
-        None: Prints the word frequencies to standard output. 
-        Errors are printed to stderr.
-    """</em>
-													</strong>
-													<strong class="hl-keyword">try</strong>:
-        <em class="hl-comment" style="color: silver"># Open and read the document, converting content to lowercase.</em>
-													<em class="hl-comment" style="color: silver"># 'utf-8' encoding is specified for broad compatibility.</em>
-													<strong class="hl-keyword">with</strong> open(filepath, <strong class="hl-string">
-														<em style="color:red">'r'</em>
-													</strong>, encoding=<strong class="hl-string">
-														<em style="color:red">'utf-8'</em>
-													</strong>) <strong class="hl-keyword">as</strong> document_file:
+def analyze_document_frequency(filepath="sampleAgg.txt"):
+    
+    try:
+        with open(filepath, 'r', encoding='utf-8') as document_file:
             text_string = document_file.read().lower()
-    <strong class="hl-keyword">except</strong> FileNotFoundError:
-        <em class="hl-comment" style="color: silver"># Handle the case where the specified input file does not exist.</em>
-													<strong class="hl-keyword">print</strong>(f<strong class="hl-string">
-														<em style="color:red">"Error: '{filepath}' not found."</em>
-													</strong>, file=sys.stderr)
-        <strong class="hl-keyword">return</strong>
-													<strong class="hl-keyword">except</strong> Exception <strong class="hl-keyword">as</strong> e:
-        <em class="hl-comment" style="color: silver"># Catch other general exceptions during file reading.</em>
-													<strong class="hl-keyword">print</strong>(f<strong class="hl-string">
-														<em style="color:red">"Error while reading: {e}"</em>
-													</strong>, file=sys.stderr)
-        <strong class="hl-keyword">return</strong>
-													<em class="hl-comment" style="color: silver"># Use regular expression to find all words.</em>
-													<em class="hl-comment" style="color: silver"># '\b' ensures whole words. '[a-z]{4,15}' matches lowercase</em>
-													<em class="hl-comment" style="color: silver"># letters between 4 and 15 characters.</em>
-    match_pattern = re.findall(r<strong class="hl-string">
-														<em style="color:red">'\b[a-z]{4,15}\b'</em>
-													</strong>, text_string)
+    except FileNotFoundError:
+        print(f"Error: The file '{filepath}' was not found.", file=sys.stderr)
+        return
+    except Exception as e:
+        print(f"An error occurred while reading the file: {e}", file=sys.stderr)
+        return
 
-    <em class="hl-comment" style="color: silver"># Count word occurrences using collections.</em>
-													<em class="hl-comment" style="color: silver"># Counter for efficiency.</em>
+    match_pattern = re.findall(r'\b[a-z]{4,15}\b', text_string)
+
     word_counts = Counter(match_pattern)
 
-    <em class="hl-comment" style="color: silver"># Sort words: primary key is count (descending), </em>
-													<em class="hl-comment" style="color: silver"># secondary key is word (ascending).</em>
-													<em class="hl-comment" style="color: silver"># Lambda function creates a tuple for sorting: </em>
-													<em class="hl-comment" style="color: silver"># (-count) for descending, then word for ascending.</em>
-    sorted_words = sorted(word_counts.items(), \ 
-    key=<strong class="hl-keyword">lambda</strong> item: (-item[<span class="hl-number">1</span>], item[<span class="hl-number">0</span>]))
+    sorted_words = sorted(word_counts.items(), key=lambda item: (-item[1], item[0]))
 
-    <strong class="hl-keyword">print</strong>(<strong class="hl-string">
-														<em style="color:red">"Word Frequencies:"</em>
-													</strong>)
-    <strong class="hl-keyword">print</strong>(<strong class="hl-string">
-														<em style="color:red">"-----------------"</em>
-													</strong>)
-    <em class="hl-comment" style="color: silver"># Iterate through the sorted words and </em>
-													<em class="hl-comment" style="color: silver"># print each word and its count, separated by a pipe.</em>
-													<strong class="hl-keyword">for</strong> word, count <strong class="hl-keyword">in</strong> sorted_words:
-        <strong class="hl-keyword">print</strong>(f<strong class="hl-string">
-														<em style="color:red">"{word} | {count}"</em>
-													</strong>)
+    print("Word Frequencies:")
+    print("-----------------")
+    for word, count in sorted_words:
+        print(f"{word} | {count}")
 
-<strong class="hl-keyword">if</strong> __name__ == <strong class="hl-string">
-														<em style="color:red">"__main__"</em>
-													</strong>:
-    <em class="hl-comment" style="color: silver"># Make sure the function runs only when </em>
-													<em class="hl-comment" style="color: silver"># the script is executed directly, </em>
-													<em class="hl-comment" style="color: silver"># not when imported as a module.</em>
+if __name__ == "__main__":
     analyze_document_frequency()
-		</pre>
+	</code>
+</pre>
 												<p>Note on Code Source:  
 		This code started with the Python script in <span class="emphasis">
 														<em>Alchemy of Tomes</em>
